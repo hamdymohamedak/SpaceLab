@@ -13,5 +13,14 @@
     "language": "AR",
     "startProject": "Start Your Project",
     "startNow": "Start Now"
+  },
+  "badge": "SpaceLab Platform for Advanced Digital Solutions",
+  "heading": {
+    "line1": "Creating Solutions That Go",
+    "line2": "Beyond Earth's Limits"
+  },
+  "Herobuttons": {
+    "portfolio": "Our Portfolio",
+    "contact": "Contact Us"
   }
 }

@@ -1,45 +1,44 @@
 import React, { useState, useEffect } from "react";
-import { Globe, Phone, Menu, X, ChevronDown } from "lucide-react";
-import ar from "../../locales/ar.json";
-import en from "../../locales/en.json";
+import { Globe, Phone, Menu, X ,Languages} from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState("ar");
+  const [language, setLanguage] = useState(i18n.language || "ar");
 
-  // تغيير اتجاه الصفحة حسب اللغة
-  useEffect(() => {
-    document.body.dir = language === "ar" ? "rtl" : "ltr";
-  }, [language]);
 
-  // اختيار الترجمة
-  const translations = { ar, en };
-  const t = translations[language];
 
   const navLinks = [
-    { label: t.nav.home, href: "#" },
-    { label: t.nav.partners, href: "#" },
-    { label: t.nav.about, href: "#" },
-    { label: t.nav.services, href: "#" },
-    { label: t.nav.process, href: "#" },
-    { label: t.nav.projects, href: "#" },
-    { label: t.nav.contact, href: "#" }
+    { label: t("nav.home"), href: "#" },
+    { label: t("nav.partners"), href: "#" },
+    { label: t("nav.about"), href: "#" },
+    { label: t("nav.services"), href: "#" },
+    { label: t("nav.process"), href: "#" },
+    { label: t("nav.projects"), href: "#" },
+    { label: t("nav.contact"), href: "#" },
   ];
 
-  const toggleLanguage = () => setLanguage(language === "ar" ? "en" : "ar");
+  const toggleLanguage = () => {
+    const newLang = language === "ar" ? "en" : "ar";
+    setLanguage(newLang);
+    i18n.changeLanguage(newLang);
+  };
 
   return (
-    <header className="w-full bg-[#0a0a1a] text-white border-b border-gray-800/50" dir="ltr">
+    <header className="w-full bg-[#0a0a1a] text-white border-b border-gray-800/50">
       <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
-        {/* Desktop */}
+        {/* Desktop Header */}
         <div className="hidden lg:flex items-center justify-between">
+          {/* Logo */}
           <a
             href="#"
             className="text-2xl font-bold bg-gradient-to-r from-purple-500 via-purple-400 to-purple-500 bg-clip-text text-transparent"
           >
-            {t.logo}
+            {t("logo")}
           </a>
 
+          {/* Navigation Links */}
           <nav className="flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
@@ -52,45 +51,50 @@ export default function Header() {
             ))}
           </nav>
 
+          {/* Buttons */}
           <div className="flex items-center gap-3">
             <button
               onClick={toggleLanguage}
               className="flex items-center gap-1 bg-[#2a2a3a] text-white rounded-full px-4 py-2 hover:bg-[#3a3a4a] transition-colors duration-200"
             >
-              {language === "ar" ? "EN" : "AR"}
+              {language === "ar" ? "EN" : "AR"}<Languages stroke="#a855f7" />
             </button>
 
             <button className="flex items-center gap-2 bg-gradient-to-r from-purple-600 via-purple-500 to-orange-400 text-white rounded-full px-6 py-2.5 text-sm font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
               <Phone size={16} />
-              {t.buttons.startProject}
+              {t("buttons.startProject")}
             </button>
           </div>
         </div>
 
-        {/* Mobile */}
+        {/* Mobile Header */}
         <div className="lg:hidden flex items-center justify-between">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white focus:outline-none p-2 hover:bg-purple-500/10 rounded-lg transition-colors"
+              className="focus:outline-none p-2 hover:bg-purple-500/10 rounded-lg transition-colors"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? (
+                <X size={24} stroke="#a855f7" />
+              ) : (
+                <Menu size={24} stroke="#a855f7" />
+              )}
             </button>
 
-            {/* اللوجو بجوار أيقونة البورجر */}
             <a
               href="#"
               className="text-xl font-bold bg-gradient-to-r from-purple-500 via-purple-400 to-purple-500 bg-clip-text text-transparent"
             >
-              {t.logo}
+              {t("logo")}
             </a>
           </div>
 
           <button className="bg-gradient-to-r from-purple-600 via-purple-500 to-orange-400 text-white rounded-full px-5 py-2 text-sm font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
-            {t.buttons.startNow}
+            {t("buttons.startNow")}
           </button>
         </div>
 
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-gray-800/50 pt-4">
             <nav className="flex flex-col space-y-3">
@@ -105,7 +109,7 @@ export default function Header() {
                 </a>
               ))}
             </nav>
-            
+
             <div className="mt-4 px-4">
               <button
                 onClick={toggleLanguage}
