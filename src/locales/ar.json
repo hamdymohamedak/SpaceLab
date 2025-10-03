@@ -1,0 +1,17 @@
+{
+  "logo": "SpaceLab",
+  "nav": {
+    "home": "الرئيسية",
+    "partners": "شركاؤنا",
+    "about": "من نحن",
+    "services": "الخدمات",
+    "process": "القيمة",
+    "projects": "أعمالنا",
+    "contact": "اتصل بنا"
+  },
+  "buttons": {
+    "language": "EN",
+    "startProject": "ابدأ مشروعك",
+    "startNow": "ابدأ الآن"
+  }
+}

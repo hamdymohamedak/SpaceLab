@@ -1,0 +1,17 @@
+{
+  "logo": "SpaceLab",
+  "nav": {
+    "home": "Home",
+    "partners": "Partners",
+    "about": "About",
+    "services": "Services",
+    "process": "Process",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "buttons": {
+    "language": "AR",
+    "startProject": "Start Your Project",
+    "startNow": "Start Now"
+  }
+}
