@@ -5,18 +5,15 @@ import planet from "../../assets/Hero/planet.png";
 import rocks from "../../assets/Hero/Rocks.png";
 import BlueBlur from "../../assets/Hero/Blueblur.png";
 
-// الكلمات اللي عايزين نطبق عليها gradient
 const gradientWords = ["Solutions", "Limits", "حلول", "تجاوز", "الكون"];
 
 function GradientText({ text }) {
     const words = text.split(" ");
-
     return (
         <>
             {words.map((word, index) => {
-                const cleanWord = word.replace(/[\.,]/g, ""); // إزالة علامات الترقيم
+                const cleanWord = word.replace(/[\.,]/g, "");
                 const isGradient = gradientWords.includes(cleanWord);
-
                 return (
                     <span
                         key={index}
@@ -79,21 +76,21 @@ export default function Hero() {
                 </div>
 
                 {/* العنوان */}
-                <div style={{ width: "838px" }} className="mb-12 sm:mb-12">
-                    <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold leading-tight">
+                <div className="mb-12 sm:mb-12 max-w-full sm:max-w-[90%] md:max-w-[838px]">
+                    <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold leading-snug sm:leading-tight break-words">
                         <GradientText text={t('heading.line1')} />
-                        <br />
+                        <br className="sm:hidden" />
                         <GradientText text={t('heading.line2')} />
                     </h1>
                 </div>
 
                 {/* الأزرار */}
-                <div className="flex flex-row gap-4 sm:flex-row">
-                    <button className="group px-6 py-3 bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] rounded-full text-white font-medium text-sm sm:text-base flex items-center gap-2 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 delay-150 hover:scale-105">
+                <div className="flex flex-row gap-4 justify-center w-full max-w-sm">
+                    <button className="group w-auto px-6 py-3 bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] rounded-full text-white font-medium text-sm sm:text-base flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 delay-150 hover:scale-105">
                         <span>{t('Herobuttons.contact')}</span>
                         <Phone className="w-5 h-5" />
                     </button>
-                    <button className="group px-6 py-3 bg-transparent border border-yellow-500 rounded-full text-white font-bold text-sm sm:text-base flex justify-center items-center gap-2 hover:bg-yellow-500 hover:text-white hover:shadow-lg hover:shadow-red-500/50 transition-all hover:scale-105">
+                    <button className="group w-auto px-6 py-3 bg-transparent border border-yellow-500 rounded-full text-white font-bold text-sm sm:text-base flex justify-center items-center gap-2 hover:bg-yellow-500 hover:text-white hover:shadow-lg hover:shadow-red-500/50 transition-all hover:scale-105">
                         <span>{t('Herobuttons.portfolio')}</span>
                         <FolderArchive className="w-5 h-5" />
                     </button>
