@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Globe, Phone, Menu, X ,Languages} from "lucide-react";
+import { Globe, Phone, Menu, X, Languages } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [language, setLanguage] = useState(i18n.language || "ar");
-
-
 
   const navLinks = [
     { label: t("nav.home"), href: "#" },
@@ -33,7 +31,7 @@ export default function Header() {
           {/* Logo */}
           <a
             href="#"
-            className="text-2xl font-bold bg-gradient-to-r from-purple-500 via-purple-400 to-purple-500 bg-clip-text text-transparent"
+            className="text-2xl font-bold bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] bg-clip-text text-transparent transition-all duration-300 delay-150 hover:text-opacity-90"
           >
             {t("logo")}
           </a>
@@ -57,10 +55,10 @@ export default function Header() {
               onClick={toggleLanguage}
               className="flex items-center gap-1 bg-[#2a2a3a] text-white rounded-full px-4 py-2 hover:bg-[#3a3a4a] transition-colors duration-200"
             >
-              {language === "ar" ? "EN" : "AR"}<Languages stroke="#a855f7" />
+              {language === "ar" ? "EN" : "AR"} <Languages stroke="#a855f7" />
             </button>
 
-            <button className="flex items-center gap-2 bg-gradient-to-r from-purple-600 via-purple-500 to-orange-400 text-white rounded-full px-6 py-2.5 text-sm font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
+            <button className="flex items-center gap-2 bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] rounded-full px-6 py-2.5 text-sm font-medium text-white hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 delay-150 hover:text-opacity-90">
               <Phone size={16} />
               {t("buttons.startProject")}
             </button>
@@ -83,13 +81,13 @@ export default function Header() {
 
             <a
               href="#"
-              className="text-xl font-bold bg-gradient-to-r from-purple-500 via-purple-400 to-purple-500 bg-clip-text text-transparent"
+              className="text-xl font-bold bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] bg-clip-text text-transparent transition-all duration-300 delay-150 hover:text-opacity-90"
             >
               {t("logo")}
             </a>
           </div>
 
-          <button className="bg-gradient-to-r from-purple-600 via-purple-500 to-orange-400 text-white rounded-full px-5 py-2 text-sm font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300">
+          <button className="bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] text-white rounded-full px-5 py-2 text-sm font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 delay-150 hover:text-opacity-90">
             {t("buttons.startNow")}
           </button>
         </div>
