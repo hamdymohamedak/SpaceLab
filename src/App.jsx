@@ -1,7 +1,8 @@
 import Header from './Components/Header/Header';
 import Hero from './Components/Hero/Hero';
-import TurnOffLogs from './TurnOffLogs'; // for remove logs at Production
-import { useTranslation } from "react-i18next"; // <--- مهم
+import Partners from './Components/Partners/Partners';
+import TurnOffLogs from './TurnOffLogs'; 
+import { useTranslation } from "react-i18next"; 
 
 function App() {
   const { i18n } = useTranslation();
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <section dir={language === "ar" ? "rtl" : "ltr"}>
         <Hero />
+        <Partners/>
       </section>
     </>
   );
