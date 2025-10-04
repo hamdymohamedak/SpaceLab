@@ -10,6 +10,7 @@ import MobileImage from "../../assets/Portfolio/MobileImage.jpg";
 import Draw from "../../assets/Portfolio/Draw.jpg";
 import Analysis from "../../assets/Portfolio/Analysis.jpg";
 import DesktopScreen from "../../assets/Portfolio/DeskTopScreen.jpg";
+import Light from "../../assets/Portfolio/Light.png";
 
 export default function Portfolio() {
     const images = [MobileImage, Draw, Analysis, DesktopScreen];
@@ -17,14 +18,21 @@ export default function Portfolio() {
     return (
         <section className="relative bg-black text-white py-16 px-4 overflow-hidden">
             <div className="relative max-w-6xl mx-auto">
+                <img
+                    style={{
+                        position: "absolute",
+                        right: "20%",
+                    }}
+                    src={Light}
+                    alt=""
+                />
 
                 <div className="lg:hidden space-y-10">
                     <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6">
-                        <div className="inline-block">
-                            <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide flex items-center justify-center gap-2">
-                                <ArrowRight /> Our Portfolio
-                            </span>
-                        </div>
+
+                        <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-200 border-b-2 border-yellow-400 pb-1">
+                            Our Portfolio
+                        </h3>
 
                         <h2 className="text-3xl sm:text-4xl font-bold leading-tight">
                             A Journey of <br />
@@ -86,14 +94,11 @@ export default function Portfolio() {
                         ))}
                     </div>
 
-
                     <div className="flex flex-col justify-center space-y-6 lg:pl-8">
                         <div className="p-8 space-y-6">
-                            <div className="inline-block">
-                                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wide flex items-center gap-2">
-                                    <ArrowRight /> Our Portfolio
-                                </span>
-                            </div>
+                            <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-200 border-b-2 border-yellow-400 inline-block pb-1">
+                                Our Portfolio
+                            </h3>
 
                             <h2 className="text-4xl xl:text-5xl font-bold leading-tight">
                                 A Journey of <br />

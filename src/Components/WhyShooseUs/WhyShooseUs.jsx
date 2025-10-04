@@ -14,9 +14,7 @@ export default function WhyChooseUs() {
             </div>
 
             <div className="max-w-6xl mx-auto relative z-10">
-                {/* Desktop version */}
                 <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-start text-left">
-                    {/* Main card on the left */}
                     <div className="relative order-first lg:order-first">
                         <div
                             style={{
@@ -49,7 +47,6 @@ export default function WhyChooseUs() {
                         </div>
                     </div>
 
-                    {/* Designs That Drive Sales card on the right */}
                     <div className="space-y-8 text-left order-last lg:order-last">
                         <div>
                             <div className="inline-block px-4 py-2 bg-slate-800/70 rounded-full text-xs text-slate-300 mb-6 border border-slate-700 text-left">
@@ -66,7 +63,6 @@ export default function WhyChooseUs() {
                         </div>
 
                         <div className="space-y-6 text-left">
-                            {/* Goal-Driven Creativity */}
                             <div
                                 style={{
                                     backgroundImage: `url(${textbg})`,
@@ -88,7 +84,6 @@ export default function WhyChooseUs() {
                                 </div>
                             </div>
 
-                            {/* Result-Oriented Experience */}
                             <div className="rounded-2xl p-6 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 text-left bg-transparent backdrop-blur-sm">
                                 <div className="flex items-start gap-5">
                                     <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
@@ -106,9 +101,7 @@ export default function WhyChooseUs() {
                     </div>
                 </div>
 
-                {/* Mobile version: Designs That Drive Sales first */}
                 <div className="lg:hidden space-y-8 text-left">
-                    {/* Designs That Drive Sales card first */}
                     <div>
                         <div className="inline-block px-4 py-2 bg-slate-800/70 rounded-full text-xs text-slate-300 mb-6 border border-slate-700 text-left">
                             {t('whyChooseUs')}
@@ -123,7 +116,6 @@ export default function WhyChooseUs() {
                         </p>
 
                         <div className="space-y-6 px-4 text-left">
-                            {/* Goal-Driven Creativity */}
                             <div className="rounded-2xl p-6 border border-slate-700/50 bg-transparent backdrop-blur-sm">
                                 <div className="flex items-start gap-4">
                                     <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
@@ -138,7 +130,6 @@ export default function WhyChooseUs() {
                                 </div>
                             </div>
 
-                            {/* Result-Oriented Experience */}
                             <div className="rounded-2xl p-6 border border-slate-700/50 bg-transparent backdrop-blur-sm">
                                 <div className="flex items-start gap-4">
                                     <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
@@ -155,7 +146,6 @@ export default function WhyChooseUs() {
                         </div>
                     </div>
 
-                    {/* Enhance your digital card next */}
                     <div className="px-4 text-left">
                         <div
                             style={{
