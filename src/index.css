@@ -8,26 +8,31 @@ html {
     font-size: 16px;
 }
 
-@media (max-width:320px) {
+@media (max-width: 320px) {
     html {
         font-size: 10px;
     }
 }
 
-@media (max-width:425px) {
+@media (max-width: 300px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 425px) {
     html {
         font-size: 11px;
     }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
     html {
         font-size: 13px;
     }
 }
 
-
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
     html {
         font-size: 15px;
     }
