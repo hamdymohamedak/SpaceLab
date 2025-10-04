@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Partners() {
   let [partnersState] = useState([
@@ -57,6 +58,9 @@ export default function Partners() {
     };
   }, []);
 
+    // translate hook
+      const { t } = useTranslation();
+  
   return (
     <div className="relative w-full bg-[#0a0b1e] py-16 px-4 overflow-hidden">
       {/* Decorative elements */}
@@ -66,10 +70,10 @@ export default function Partners() {
       {/* Content container */}
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" dir="rtl">
-          شركاؤنا في النجاح
+        {t('sucessPartners')}
         </h1>
         <p className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto leading-relaxed" dir="rtl">
-          رحلتنا مع شركائنا لم تكن مجرد مشاريع عابرة، بل هي مسيرة مستمرة من الإنجازات المشتركة، حيث يلتقي الطموح مع الخبرة لنحقق معًا مستقبلًا رقميًا أكثر إشراقًا.
+        {t('sucessPartnersDes')}
         </p>
       </div>
 
