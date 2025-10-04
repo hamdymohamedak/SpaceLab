@@ -23,16 +23,24 @@
     "portfolio": "Our Portfolio",
     "contact": "Contact Us"
   },
-   "sucessPartners":"Our Partners in sucess",
-   "sucessPartnersDes":"Our journey with our partners has never been just passing projects, but a continuous path of shared achievements, where ambition meets expertise to create together a brighter digital future.",
-   
-   
-   
-   
-   
-   
-   "HappyClients":"Happy Clients",
-   "YearsOfExperience":"Years of Experience",
-   "ClientReviews":"Client Reviews",
-   "AverageRating":"Average Rating"
+  "sucessPartners": "Our Partners in sucess",
+  "sucessPartnersDes": "Our journey with our partners has never been just passing projects, but a continuous path of shared achievements, where ambition meets expertise to create together a brighter digital future.",
+  
+  "whyChooseUs": "Why Choose Us?",
+  "designsThatDriveSales": "Designs That Drive Sales",
+  "digitalSolutionsDescription": "We provide comprehensive digital solutions focused on a deep understanding of your business needs, helping you build a professional brand and create seamless user experiences in high-quality ecommerce platforms with SEO and smart marketing, ensuring your brand leaves its mark and turns ideas into measurable results.",
+  "goalDrivenCreativity": "Goal-Driven Creativity",
+  "goalDrivenCreativityDescription": "We blend beauty with functionality, creating designs that don't just impress but also serve your marketing objectives and satisfy the right audience.",
+  "resultOrientedExperience": "Result-Oriented Experience",
+  "resultOrientedExperienceDescription": "Our design approach is based on analyzing digital behavior to ensure visitor engagement, reduce bounce rates, and maximize conversion opportunities.",
+  "whatSetsUsApart": "What Sets Us Apart",
+  "enhanceDigitalImpact": "Enhance your digital impact with SpaceLab's expertise.",
+  "enhanceDigitalImpactDescription": "At SpaceLab, we empower brands with advanced digital solutions that drive engagement and growth. From impressive website design to strategic marketing, our expertise ensures you a strong online presence that attracts audiences and delivers results.",
+  "startYourJourney": "Start Your Journey",
+
+  
+  "HappyClients": "Happy Clients",
+  "YearsOfExperience": "Years of Experience",
+  "ClientReviews": "Client Reviews",
+  "AverageRating": "Average Rating"
 }

@@ -1,8 +1,11 @@
 import React from 'react';
 import { Lightbulb, Target, Phone } from 'lucide-react';
 import textbg from "../../assets/whyShooseUs/textBG.png";
+import { useTranslation } from 'react-i18next';
 
 export default function WhyChooseUs() {
+    const { t } = useTranslation();
+
     return (
         <div className="min-h-screen bg-slate-950 py-20 px-4 relative overflow-hidden">
             <div className="absolute inset-0">
@@ -12,21 +15,52 @@ export default function WhyChooseUs() {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-start text-left">
-                    <div className="space-y-8 text-left order-first lg:order-first">
+                    {/* الكارت الرئيسي (زر Start Your Journey) على اليسار */}
+                    <div className="relative order-first lg:order-first">
+                        <div
+                            style={{
+                                backgroundImage: `url(${textbg})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                            }}
+                            className="rounded-3xl p-12 border border-slate-700/50 shadow-2xl relative overflow-hidden bg-slate-900/40 backdrop-blur-sm"
+                        >
+                            <div className="relative z-10">
+                                <div className="inline-block px-4 py-2 bg-slate-900/70 rounded-full text-xs text-slate-300 mb-8 border border-slate-700 text-left">
+                                    {t('whatSetsUsApart')}
+                                </div>
+
+                                <h2 className="text-5xl font-bold text-white mb-6 leading-tight text-left">
+                                    {t('enhanceDigitalImpact')}
+                                </h2>
+
+                                <p className="text-slate-400 text-base leading-relaxed mb-10 text-left">
+                                    {t('enhanceDigitalImpactDescription')}
+                                </p>
+
+                                <div className="flex justify-start">
+                                    <button className="group px-8 py-4 bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] hover:from-[#7B1FA2] hover:via-[#7B1FA2]/80 hover:to-[#F48F0B] text-white font-semibold rounded-full flex items-center gap-3 transition-all duration-300 shadow-lg hover:shadow-purple-500/50">
+                                        {t('startYourJourney')}
+                                        <Phone />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* كارت Designs That Drive Sales على اليمين */}
+                    <div className="space-y-8 text-left order-last lg:order-last">
                         <div>
                             <div className="inline-block px-4 py-2 bg-slate-800/70 rounded-full text-xs text-slate-300 mb-6 border border-slate-700 text-left">
-                                Why Choose Us?
+                                {t('whyChooseUs')}
                             </div>
 
                             <h1 className="text-5xl font-bold text-white mb-6 leading-tight text-left">
-                                Designs That Drive <span className="text-blue-500">Sales</span>
+                                {t('designsThatDriveSales').split(' ').slice(0,2).join(' ')} <span className="text-blue-500">{t('designsThatDriveSales').split(' ').slice(2).join(' ')}</span>
                             </h1>
 
                             <p className="text-slate-400 text-base leading-relaxed mb-10 text-left">
-                                We provide comprehensive digital solutions focused on a deep understanding of your business needs,
-                                helping you build a professional brand and create seamless user experiences in high-quality ecommerce
-                                platforms with SEO and smart marketing, ensuring your brand leaves its mark and turns ideas into
-                                measurable results.
+                                {t('digitalSolutionsDescription')}
                             </p>
                         </div>
 
@@ -41,10 +75,9 @@ export default function WhyChooseUs() {
                             >
                                 <div className="flex items-start gap-5">
                                     <div className="flex-1">
-                                        <h3 className="text-xl font-bold text-white mb-3 text-left">Goal-Driven Creativity</h3>
+                                        <h3 className="text-xl font-bold text-white mb-3 text-left">{t('goalDrivenCreativity')}</h3>
                                         <p className="text-slate-400 text-sm leading-relaxed text-left">
-                                            We blend beauty with functionality, creating designs that don't just impress but also serve your
-                                            marketing objectives and satisfy the right audience.
+                                            {t('goalDrivenCreativityDescription')}
                                         </p>
                                     </div>
                                     <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
@@ -56,10 +89,9 @@ export default function WhyChooseUs() {
                             <div className="rounded-2xl p-6 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 text-left bg-transparent backdrop-blur-sm">
                                 <div className="flex items-start gap-5">
                                     <div className="flex-1">
-                                        <h3 className="text-xl font-bold text-white mb-3 text-left">Result-Oriented Experience</h3>
+                                        <h3 className="text-xl font-bold text-white mb-3 text-left">{t('resultOrientedExperience')}</h3>
                                         <p className="text-slate-400 text-sm leading-relaxed text-left">
-                                            Our design approach is based on analyzing digital behavior to ensure visitor engagement,
-                                            reduce bounce rates, and maximize conversion opportunities.
+                                            {t('resultOrientedExperienceDescription')}
                                         </p>
                                     </div>
                                     <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
@@ -69,98 +101,11 @@ export default function WhyChooseUs() {
                             </div>
                         </div>
                     </div>
-
-                    <div className="relative order-last lg:order-last">
-                        <div
-                            style={{
-                                backgroundImage: `url(${textbg})`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center',
-                            }}
-                            className="rounded-3xl p-12 border border-slate-700/50 shadow-2xl relative overflow-hidden bg-slate-900/40 backdrop-blur-sm"
-                        >
-                            <div className="relative z-10">
-                                <div className="inline-block px-4 py-2 bg-slate-900/70 rounded-full text-xs text-slate-300 mb-8 border border-slate-700 text-left">
-                                    What Sets Us Apart
-                                </div>
-
-                                <h2 className="text-5xl font-bold text-white mb-6 leading-tight text-left">
-                                    Enhance your digital<br />
-                                    impact with{' '}
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500">
-                                        SpaceLab's
-                                    </span>
-                                    <br />
-                                    expertise.
-                                </h2>
-
-                                <p className="text-slate-400 text-base leading-relaxed mb-10 text-left">
-                                    At SpaceLab, we empower brands with advanced digital solutions that drive engagement and growth.
-                                    From impressive website design to strategic marketing, our expertise ensures you a strong online
-                                    presence that attracts audiences and delivers results.
-                                </p>
-
-                                <div className="flex justify-start">
-                                    <button className="group px-8 py-4 bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] hover:from-[#7B1FA2] hover:via-[#7B1FA2]/80 hover:to-[#F48F0B] text-white font-semibold rounded-full flex items-center gap-3 transition-all duration-300 shadow-lg hover:shadow-purple-500/50">
-                                        Start Your Journey
-                                        <Phone />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
+                {/* نسخة الهواتف تم عكس ترتيب الكروت أيضًا */}
                 <div className="lg:hidden space-y-8 text-left">
-                    <div>
-                        <div className="inline-block px-4 py-2 bg-slate-800/70 rounded-full text-xs text-slate-300 mb-6 border border-slate-700 text-left">
-                            Why Choose Us?
-                        </div>
-
-                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight text-left px-4">
-                            Designs That Drive <span className="text-blue-500">Sales</span>
-                        </h1>
-
-                        <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-10 text-left px-4">
-                            We provide comprehensive digital solutions focused on a deep understanding of your business needs,
-                            helping you build a professional brand and create seamless user experiences in high-quality ecommerce
-                            platforms with SEO and smart marketing, ensuring your brand leaves its mark and turns ideas into
-                            measurable results.
-                        </p>
-                    </div>
-
-                    <div className="space-y-6 px-4 text-left">
-                        <div className="rounded-2xl p-6 border border-slate-700/50 bg-transparent backdrop-blur-sm">
-                            <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
-                                    <Lightbulb className="w-6 h-6 text-slate-900" />
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-lg font-bold text-white mb-2 text-left">Goal-Driven Creativity</h3>
-                                    <p className="text-slate-400 text-sm leading-relaxed text-left">
-                                        We blend beauty with functionality, creating designs that don't just impress but also serve your
-                                        marketing objectives and satisfy the right audience.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="rounded-2xl p-6 border border-slate-700/50 bg-transparent backdrop-blur-sm">
-                            <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
-                                    <Target className="w-6 h-6 text-slate-900" />
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-lg font-bold text-white mb-2 text-left">Result-Oriented Experience</h3>
-                                    <p className="text-slate-400 text-sm leading-relaxed text-left">
-                                        Our design approach is based on analyzing digital behavior to ensure visitor engagement,
-                                        reduce bounce rates, and maximize conversion opportunities.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    {/* الكارت الرئيسي أولاً */}
                     <div className="px-4 text-left">
                         <div
                             style={{
@@ -172,29 +117,66 @@ export default function WhyChooseUs() {
                         >
                             <div className="relative z-10">
                                 <div className="inline-block px-4 py-2 bg-slate-900/70 rounded-full text-xs text-slate-300 mb-8 border border-slate-700 text-left">
-                                    What Sets Us Apart
+                                    {t('whatSetsUsApart')}
                                 </div>
 
                                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight text-left">
-                                    Enhance your digital<br />
-                                    impact with{' '}
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500">
-                                        SpaceLab's
-                                    </span>
-                                    <br />
-                                    expertise.
+                                    {t('enhanceDigitalImpact')}
                                 </h2>
 
                                 <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-10 text-left">
-                                    At SpaceLab, we empower brands with advanced digital solutions that drive engagement and growth.
-                                    From impressive website design to strategic marketing, our expertise ensures you a strong online
-                                    presence that attracts audiences and delivers results.
+                                    {t('enhanceDigitalImpactDescription')}
                                 </p>
 
                                 <button className="w-full group px-8 py-4 bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] hover:from-[#7B1FA2] hover:via-[#7B1FA2]/80 hover:to-[#F48F0B] text-white font-semibold rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-lg">
-                                    Start Your Journey
+                                    {t('startYourJourney')}
                                     <Phone />
                                 </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* كارت Designs That Drive Sales بعده */}
+                    <div>
+                        <div className="inline-block px-4 py-2 bg-slate-800/70 rounded-full text-xs text-slate-300 mb-6 border border-slate-700 text-left">
+                            {t('whyChooseUs')}
+                        </div>
+
+                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight text-left px-4">
+                            {t('designsThatDriveSales').split(' ').slice(0,2).join(' ')} <span className="text-blue-500">{t('designsThatDriveSales').split(' ').slice(2).join(' ')}</span>
+                        </h1>
+
+                        <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-10 text-left px-4">
+                            {t('digitalSolutionsDescription')}
+                        </p>
+
+                        <div className="space-y-6 px-4 text-left">
+                            <div className="rounded-2xl p-6 border border-slate-700/50 bg-transparent backdrop-blur-sm">
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
+                                        <Lightbulb className="w-6 h-6 text-slate-900" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-lg font-bold text-white mb-2 text-left">{t('goalDrivenCreativity')}</h3>
+                                        <p className="text-slate-400 text-sm leading-relaxed text-left">
+                                            {t('goalDrivenCreativityDescription')}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="rounded-2xl p-6 border border-slate-700/50 bg-transparent backdrop-blur-sm">
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
+                                        <Target className="w-6 h-6 text-slate-900" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-lg font-bold text-white mb-2 text-left">{t('resultOrientedExperience')}</h3>
+                                        <p className="text-slate-400 text-sm leading-relaxed text-left">
+                                            {t('resultOrientedExperienceDescription')}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -203,4 +185,3 @@ export default function WhyChooseUs() {
         </div>
     );
 }
-    

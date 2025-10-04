@@ -2,3 +2,4 @@
 
 # Fetures of Website
 ## ar / en Langauges
+## Translation without reload
