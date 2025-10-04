@@ -42,7 +42,7 @@ const servicesData = [
         description:
             "Without SEO, your website is like a lost map in a maze. With our team, you'll be at the top of Google search results.",
         icon: Search,
-        bgStyle: 'bg-gradient-to-br from-[#3B4B6B] to-[#4A5A7A]',
+        bgStyle: 'bg-gradient-to-br from-[#141116] to-[#4A5A7A]',
         buttonText: 'Start Now',
         buttonLink: '#',
         backgroundImage: SearchEngineCardBG,
@@ -59,7 +59,7 @@ const servicesData = [
         description:
             "We create content that leaves a mark and tells your brand's story in a way that inspires your audience and turns engagement into lasting, genuine connections.",
         icon: Users,
-        bgStyle: 'bg-gradient-to-br from-[#1F2937] to-[#374151]',
+        bgStyle: 'bg-gradient-to-br from-[#141116] to-[#374151]',
         buttonText: 'Start Now',
         buttonLink: '#',
         backgroundImage: SocialMedia,
@@ -111,7 +111,7 @@ const servicesData = [
         description:
             'We provide smart system solutions to efficiently manage your operations and sales, helping you organize your business and increase profits.',
         icon: Settings,
-        bgStyle: 'bg-gradient-to-br from-[#3B4B6B] to-[#4A5A7A]',
+        bgStyle: 'bg-gradient-to-br from-[#141116] to-[#4A5A7A]',
         buttonText: 'Start Now',
         buttonLink: '#',
         backgroundImage: MangementBg,
