@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
                                             marketing objectives and satisfy the right audience.
                                         </p>
                                     </div>
-                                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
+                                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
                                         <Lightbulb className="w-7 h-7 text-slate-900" />
                                     </div>
                                 </div>
@@ -62,8 +62,8 @@ export default function WhyChooseUs() {
                                             reduce bounce rates, and maximize conversion opportunities.
                                         </p>
                                     </div>
-                                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
-                                        <Target className="w-7 h-7 text-slate-900" />
+                                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
+                                        <Target className="w-6 h-6 text-slate-900" />
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@ export default function WhyChooseUs() {
                                 </p>
 
                                 <div className="flex justify-start">
-                                    <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 text-white font-semibold rounded-full flex items-center gap-3 transition-all duration-300 shadow-lg hover:shadow-purple-500/50">
+                                    <button className="group px-8 py-4 bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] hover:from-[#7B1FA2] hover:via-[#7B1FA2]/80 hover:to-[#F48F0B] text-white font-semibold rounded-full flex items-center gap-3 transition-all duration-300 shadow-lg hover:shadow-purple-500/50">
                                         Start Your Journey
                                         <Phone />
                                     </button>
@@ -132,7 +132,7 @@ export default function WhyChooseUs() {
                     <div className="space-y-6 px-4 text-left">
                         <div className="rounded-2xl p-6 border border-slate-700/50 bg-transparent backdrop-blur-sm">
                             <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
+                                <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
                                     <Lightbulb className="w-6 h-6 text-slate-900" />
                                 </div>
                                 <div className="flex-1">
@@ -147,7 +147,7 @@ export default function WhyChooseUs() {
 
                         <div className="rounded-2xl p-6 border border-slate-700/50 bg-transparent backdrop-blur-sm">
                             <div className="flex items-start gap-4">
-                                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center shadow-lg">
+                                <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
                                     <Target className="w-6 h-6 text-slate-900" />
                                 </div>
                                 <div className="flex-1">
@@ -191,7 +191,7 @@ export default function WhyChooseUs() {
                                     presence that attracts audiences and delivers results.
                                 </p>
 
-                                <button className="w-full group px-8 py-4 bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 text-white font-semibold rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-lg">
+                                <button className="w-full group px-8 py-4 bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] hover:from-[#7B1FA2] hover:via-[#7B1FA2]/80 hover:to-[#F48F0B] text-white font-semibold rounded-full flex items-center justify-center gap-3 transition-all duration-300 shadow-lg">
                                     Start Your Journey
                                     <Phone />
                                 </button>
@@ -203,3 +203,4 @@ export default function WhyChooseUs() {
         </div>
     );
 }
+    

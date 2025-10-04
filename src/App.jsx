@@ -1,7 +1,5 @@
 import Header from './Components/Header/Header';
 import Hero from './Components/Hero/Hero';
-import Partners from './Components/Partners/Partners';
-import WhyChooseUs from './Components/WhyShooseUs/WhyShooseUs';
 import TurnOffLogs from './TurnOffLogs'; 
 import { useTranslation } from "react-i18next"; 
 
@@ -17,8 +15,6 @@ function App() {
       <Header />
       <section dir={language === "ar" ? "rtl" : "ltr"}>
         <Hero />
-        <Partners/>
-        <WhyChooseUs/>
       </section>
     </>
   );
