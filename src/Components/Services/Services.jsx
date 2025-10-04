@@ -8,14 +8,19 @@ import {
     Settings,
 } from 'lucide-react';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 import starsBg from '../../assets/Services/Element.png';
 import BlueBlur from '../../assets/Services/Container.png';
 import SearchEngineCardBG from '../../assets/Services/Group 5.png';
 import MarketBg from "../../assets/Services/Market.png";
-import SocialMedia from "../../assets/Services/SocialMedia.png"
-import Ecommarce from "../../assets/Services/ECommerce.png"
-import DesginBg from "../../assets/Services/Desgin.png"
-import MangementBg from "../../assets/Services/Mangement.png"
+import SocialMedia from "../../assets/Services/SocialMedia.png";
+import Ecommarce from "../../assets/Services/ECommerce.png";
+import DesginBg from "../../assets/Services/Desgin.png";
+import MangementBg from "../../assets/Services/Mangement.png";
 
 const servicesData = [
     {
@@ -34,7 +39,6 @@ const servicesData = [
             height: '100%',
             objectFit: 'cover',
             opacity: 0.5,
-            left: "0"
         },
     },
     {
@@ -172,35 +176,46 @@ export default function Services() {
                     </p>
                 </div>
 
-                {/* Services Two by Two */}
-                <div className="flex flex-col gap-4">
-                    {Array.from({ length: Math.ceil(servicesData.length / 2) }).map((_, i) => {
-                        const left = servicesData[i * 2];
-                        const right = servicesData[i * 2 + 1];
-                        return (
-                            <div key={i} className="flex flex-col md:flex-row gap-4">
-                                {/* Left Card */}
-                                {left && (
-                                    <ServiceCard key={i * 2} {...left} />
-                                )}
-                                {/* Right Card */}
-                                {right && (
-                                    <ServiceCard key={i * 2 + 1} {...right} />
-                                )}
-                            </div>
-                        );
-                    })}
+                {/* Swiper for small screens */}
+                <div className="block md:hidden">
+                    <Swiper
+                        modules={[Pagination]}
+                        pagination={{ clickable: true }}
+                        spaceBetween={16}
+                        slidesPerView={1.2}
+                    >
+                        {servicesData.map((service, index) => (
+                            <SwiperSlide key={index}>
+                                <ServiceCard {...service} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+
+                {/* Two-column grid for larger screens */}
+                <div className="hidden md:grid grid-cols-2 gap-6">
+                    {servicesData.map((service, index) => (
+                        <ServiceCard key={index} {...service} />
+                    ))}
                 </div>
             </div>
         </div>
     );
 }
 
-// Card Component (Extracted for reuse)
-function ServiceCard({ title, description, icon: Icon, bgStyle, buttonText, buttonLink, backgroundImage, backgroundImageStyle }) {
+function ServiceCard({
+    title,
+    description,
+    icon: Icon,
+    bgStyle,
+    buttonText,
+    buttonLink,
+    backgroundImage,
+    backgroundImageStyle,
+}) {
     return (
         <div
-            className={`flex-1 relative rounded-2xl p-6 overflow-hidden group hover:scale-[1.02] transition-transform duration-300 ${bgStyle}`}
+            className={`relative rounded-2xl p-6 overflow-hidden group hover:scale-[1.02] transition-transform duration-300 ${bgStyle}`}
         >
             {backgroundImage && (
                 <img
@@ -209,9 +224,9 @@ function ServiceCard({ title, description, icon: Icon, bgStyle, buttonText, butt
                     style={backgroundImageStyle}
                 />
             )}
-            <div className="relative z-10 flex flex-col">
+            <div className="relative z-10 flex flex-col h-full">
                 <h3 className="text-white text-lg font-bold mb-3 leading-tight">{title}</h3>
-                <p className="text-white/80 text-sm mb-5 leading-relaxed">{description}</p>
+                <p className="text-white/80 text-sm mb-5 leading-relaxed flex-grow">{description}</p>
                 <a
                     href={buttonLink}
                     className="text-white text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all mt-auto"
