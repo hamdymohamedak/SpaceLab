@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function Partners() {
-  let [partnersState] = useState([
+  // كرر العناصر ثلاث مرات لضمان التكرار السلس
+  const initialPartners = [
     "Partners",
     "SmartSys",
     "WebForce",
@@ -17,7 +18,8 @@ export default function Partners() {
     "DataFlow",
     "NextGen",
     "SmartSys",
-  ]);
+  ];
+  const [partnersState] = useState([...initialPartners, ...initialPartners, ...initialPartners]);
 
   const swiperRef = useRef(null);
 
@@ -37,13 +39,37 @@ export default function Partners() {
           slidesPerView: 'auto',
           spaceBetween: 16,
           loop: true,
-          speed: 3000,
+          loopedSlides: initialPartners.length * 3, // عدد العناصر الكلي بعد التكرار
+          speed: 6000, // سرعة أبطأ للحركة المستمرة
           autoplay: {
             delay: 0,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true, // توقف مؤقت عند التحويم
+            reverseDirection: false,
           },
-          freeMode: true,
-          freeModeMomentum: false,
+          freeMode: {
+            enabled: true,
+            momentum: false, // إيقاف الزخم للحركة المستمرة
+          },
+          centeredSlides: false, // عدم توسيط الشرائح
+          breakpoints: {
+            320: {
+              spaceBetween: 8,
+            },
+            640: {
+              spaceBetween: 12,
+            },
+            1024: {
+              spaceBetween: 16,
+            },
+          },
+          // تحسين التكرار والأداء
+          watchSlidesProgress: true,
+          resistanceRatio: 0, // منع التوقف عند الحواف
+          slidesPerGroup: 1,
+          updateOnWindowResize: true,
+          // تحسين التمرير اللانهائي
+          loopAdditionalSlides: initialPartners.length, // إضافة شرائح إضافية للتكرار
         });
       }
     };
@@ -56,7 +82,6 @@ export default function Partners() {
     };
   }, []);
 
-  // translate hook
   const { t } = useTranslation();
 
   return (

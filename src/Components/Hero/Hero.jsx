@@ -7,6 +7,7 @@ import BlueBlur from "../../assets/Hero/Blueblur.png";
 import Partners from '../Partners/Partners';
 import WhyChooseUs from '../WhyShooseUs/WhyShooseUs';
 import Stats from '../Stats/Stats';
+import Services from '../Services/Services';
 
 const gradientWords = ["Solutions", "Limits", "حلول", "تجاوز", "الكون"];
 
@@ -98,6 +99,7 @@ export default function Hero() {
             <Partners />
             <WhyChooseUs />
             <Stats/>
+            <Services/>
         </>
     );
 }
