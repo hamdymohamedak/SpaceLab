@@ -42,5 +42,45 @@
   "HappyClients": "Happy Clients",
   "YearsOfExperience": "Years of Experience",
   "ClientReviews": "Client Reviews",
-  "AverageRating": "Average Rating"
+  "AverageRating": "Average Rating",
+
+
+
+    "sectionLabel": "Our Services",
+    "sectionTitle": "How we turn your ideas into a stunning digital reality",
+    "sectionHighlight": "stunning digital reality",
+    "sectionDescription": "We provide a comprehensive range of design and development solutions that meet all your needs, and ensure you are getting the best planning efficiency and creativity.",
+    "cards": {
+      "marketing": {
+        "title": "Marketing & Campaign Management",
+        "description": "With our ads, you don't just sell products. You create a unique experience that touches your audience's emotions and stays in their memory forever.",
+        "button": "Start Now"
+      },
+      "seo": {
+        "title": "Search Engine Optimization – SEO",
+        "description": "Without SEO, your website is like a lost map in a maze. With our team, you'll be at the top of Google search results.",
+        "button": "Start Now"
+      },
+      "socialMedia": {
+        "title": "Social Media Management",
+        "description": "We create content that leaves a mark and tells your brand's story in a way that inspires your audience and turns engagement into lasting, genuine connections.",
+        "button": "Start Now"
+      },
+      "ecommerce": {
+        "title": "E-Commerce Store Design & Development",
+        "description": "With us, your online store becomes professional, fast, and tailored for an ideal user experience that attracts customers and boosts sales.",
+        "button": "Start Now"
+      },
+      "graphicDesign": {
+        "title": "Graphic Design & Brand Identity",
+        "description": "We design unique visual identities that reflect your uniqueness and build a strong image of your brand in the minds of your customers.",
+        "button": "Start Now"
+      },
+      "managementSystems": {
+        "title": "Management & Sales Systems",
+        "description": "We provide smart system solutions to efficiently manage your operations and sales, helping you organize your business and increase profits.",
+        "button": "Start Now"
+      }
+    }
+
 }

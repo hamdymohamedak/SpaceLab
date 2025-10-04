@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     TrendingUp,
     Search,
@@ -22,118 +21,115 @@ import Ecommarce from "../../assets/Services/ECommerce.png";
 import DesginBg from "../../assets/Services/Desgin.png";
 import MangementBg from "../../assets/Services/Mangement.png";
 
-const servicesData = [
-    {
-        title: 'Marketing & Campaign Management',
-        description:
-            "With our ads, you don't just sell products. You create a unique experience that touches your audience's emotions and stays in their memory forever.",
-        icon: TrendingUp,
-        bgStyle: 'bg-gradient-to-br from-[#8B5CF6] to-[#A855F7]',
-        buttonText: 'Start Now',
-        buttonLink: '#',
-        backgroundImage: MarketBg,
-        backgroundImageStyle: {
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            opacity: 0.5,
-        },
-    },
-    {
-        title: 'Search Engine Optimization – SEO',
-        description:
-            "Without SEO, your website is like a lost map in a maze. With our team, you'll be at the top of Google search results.",
-        icon: Search,
-        bgStyle: 'bg-gradient-to-br from-[#141116] to-[#4A5A7A]',
-        buttonText: 'Start Now',
-        buttonLink: '#',
-        backgroundImage: SearchEngineCardBG,
-        backgroundImageStyle: {
-            position: 'absolute',
-            right: 0,
-            bottom: 0,
-            width: '128px',
-            opacity: 0.5,
-        },
-    },
-    {
-        title: 'Social Media Management',
-        description:
-            "We create content that leaves a mark and tells your brand's story in a way that inspires your audience and turns engagement into lasting, genuine connections.",
-        icon: Users,
-        bgStyle: 'bg-gradient-to-br from-[#141116] to-[#374151]',
-        buttonText: 'Start Now',
-        buttonLink: '#',
-        backgroundImage: SocialMedia,
-        backgroundImageStyle: {
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            opacity: 0.5,
-        },
-    },
-    {
-        title: 'E-Commerce Store Design & Development',
-        description:
-            'With us, your online store becomes professional, fast, and tailored for an ideal user experience that attracts customers and boosts sales.',
-        icon: ShoppingCart,
-        bgStyle: 'bg-gradient-to-br from-[#6366F1] to-[#818CF8]',
-        buttonText: 'Start Now',
-        buttonLink: '#',
-        backgroundImage: Ecommarce,
-        backgroundImageStyle: {
-            position: 'absolute',
-            left: 0,
-            top: 0,
-            width: '192px',
-            opacity: 0.5,
-        },
-    },
-    {
-        title: 'Graphic Design & Brand Identity',
-        description:
-            'We design unique visual identities that reflect your uniqueness and build a strong image of your brand in the minds of your customers.',
-        icon: PenTool,
-        bgStyle: 'bg-gradient-to-br from-[#8B5CF6] to-[#A855F7]',
-        buttonText: 'Start Now',
-        buttonLink: '#',
-        backgroundImage: DesginBg,
-        backgroundImageStyle: {
-            position: 'absolute',
-            right: 0,
-            bottom: 0,
-            width: '160px',
-            opacity: 0.5,
-        },
-    },
-    {
-        title: 'Management & Sales Systems',
-        description:
-            'We provide smart system solutions to efficiently manage your operations and sales, helping you organize your business and increase profits.',
-        icon: Settings,
-        bgStyle: 'bg-gradient-to-br from-[#141116] to-[#4A5A7A]',
-        buttonText: 'Start Now',
-        buttonLink: '#',
-        backgroundImage: MangementBg,
-        backgroundImageStyle: {
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            opacity: 0.5,
-        },
-    },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function Services() {
+    const { t } = useTranslation();
+
+    const servicesData = [
+        {
+            title: t('cards.marketing.title'),
+            description: t('cards.marketing.description'),
+            icon: TrendingUp,
+            bgStyle: 'bg-gradient-to-br from-[#8B5CF6] to-[#A855F7]',
+            buttonText: t('cards.marketing.button'),
+            buttonLink: '#',
+            backgroundImage: MarketBg,
+            backgroundImageStyle: {
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                opacity: 0.5,
+            },
+        },
+        {
+            title: t('cards.seo.title'),
+            description: t('cards.seo.description'),
+            icon: Search,
+            bgStyle: 'bg-gradient-to-br from-[#141116] to-[#4A5A7A]',
+            buttonText: t('cards.seo.button'),
+            buttonLink: '#',
+            backgroundImage: SearchEngineCardBG,
+            backgroundImageStyle: {
+                position: 'absolute',
+                right: 0,
+                bottom: 0,
+                width: '128px',
+                opacity: 0.5,
+            },
+        },
+        {
+            title: t('cards.socialMedia.title'),
+            description: t('cards.socialMedia.description'),
+            icon: Users,
+            bgStyle: 'bg-gradient-to-br from-[#141116] to-[#374151]',
+            buttonText: t('cards.socialMedia.button'),
+            buttonLink: '#',
+            backgroundImage: SocialMedia,
+            backgroundImageStyle: {
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                opacity: 0.5,
+            },
+        },
+        {
+            title: t('cards.ecommerce.title'),
+            description: t('cards.ecommerce.description'),
+            icon: ShoppingCart,
+            bgStyle: 'bg-gradient-to-br from-[#6366F1] to-[#818CF8]',
+            buttonText: t('cards.ecommerce.button'),
+            buttonLink: '#',
+            backgroundImage: Ecommarce,
+            backgroundImageStyle: {
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                width: '192px',
+                opacity: 0.5,
+            },
+        },
+        {
+            title: t('cards.graphicDesign.title'),
+            description: t('cards.graphicDesign.description'),
+            icon: PenTool,
+            bgStyle: 'bg-gradient-to-br from-[#8B5CF6] to-[#A855F7]',
+            buttonText: t('cards.graphicDesign.button'),
+            buttonLink: '#',
+            backgroundImage: DesginBg,
+            backgroundImageStyle: {
+                position: 'absolute',
+                right: 0,
+                bottom: 0,
+                width: '160px',
+                opacity: 0.5,
+            },
+        },
+        {
+            title: t('cards.managementSystems.title'),
+            description: t('cards.managementSystems.description'),
+            icon: Settings,
+            bgStyle: 'bg-gradient-to-br from-[#141116] to-[#4A5A7A]',
+            buttonText: t('cards.managementSystems.button'),
+            buttonLink: '#',
+            backgroundImage: MangementBg,
+            backgroundImageStyle: {
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                opacity: 0.5,
+            },
+        },
+    ];
+
     return (
         <div className="relative min-h-screen bg-black py-16 px-4 overflow-visible">
-            {/* Background Images */}
             <img
                 className="absolute left-[15%] top-0 pointer-events-none z-0"
                 src={starsBg}
@@ -150,7 +146,6 @@ export default function Services() {
                 alt="BlueBlur"
             />
 
-            {/* Gradient Lines */}
             <div className="absolute top-10 left-10 w-24 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent rotate-45 pointer-events-none" />
             <div className="absolute top-20 left-16 w-32 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent rotate-45 pointer-events-none" />
             <div className="absolute top-32 right-20 w-24 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent -rotate-45 pointer-events-none" />
@@ -159,24 +154,23 @@ export default function Services() {
             <div className="relative max-w-6xl mx-auto">
                 <div className="text-center mb-12">
                     <p className="text-gray-500 text-xs uppercase tracking-wider mb-3">
-                        Our Services
+                        {t('sectionLabel')}
                     </p>
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
-                        How we turn your ideas into a
+                        {t('sectionTitle').replace(
+                            t('sectionHighlight'),
+                            ''
+                        )}
                         <br />
                         <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-purple-600 bg-clip-text text-transparent">
-                            stunning digital reality
+                            {t('sectionHighlight')}
                         </span>
                     </h1>
                     <p className="text-gray-500 text-sm max-w-3xl mx-auto leading-relaxed">
-                        We provide a comprehensive range of design and development solutions
-                        that meet all your needs, and ensure you are
-                        <br className="hidden md:block" /> getting the best planning
-                        efficiency and creativity
+                        {t('sectionDescription')}
                     </p>
                 </div>
 
-                {/* Swiper for small screens */}
                 <div className="block md:hidden">
                     <Swiper
                         modules={[Pagination]}
@@ -192,7 +186,6 @@ export default function Services() {
                     </Swiper>
                 </div>
 
-                {/* Two-column grid for larger screens */}
                 <div className="hidden md:grid grid-cols-2 gap-6">
                     {servicesData.map((service, index) => (
                         <ServiceCard key={index} {...service} />
@@ -206,7 +199,6 @@ export default function Services() {
 function ServiceCard({
     title,
     description,
-    icon: Icon,
     bgStyle,
     buttonText,
     buttonLink,
