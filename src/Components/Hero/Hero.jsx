@@ -8,6 +8,7 @@ import Partners from '../Partners/Partners';
 import WhyChooseUs from '../WhyShooseUs/WhyShooseUs';
 import Stats from '../Stats/Stats';
 import Services from '../Services/Services';
+import Work from '../Work/Work';
 
 const gradientWords = ["Solutions", "Limits", "حلول", "تجاوز", "الكون"];
 
@@ -100,6 +101,7 @@ export default function Hero() {
             <WhyChooseUs />
             <Stats/>
             <Services/>
+            <Work/>
         </>
     );
 }
