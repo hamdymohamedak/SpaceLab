@@ -22,17 +22,15 @@ export default function Partners() {
   const swiperRef = useRef(null);
 
   useEffect(() => {
-    // Load Swiper CSS
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
     document.head.appendChild(link);
 
-    // Load Swiper JS
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
     script.async = true;
-    
+
     script.onload = () => {
       if (window.Swiper && swiperRef.current) {
         new window.Swiper(swiperRef.current, {
@@ -49,7 +47,7 @@ export default function Partners() {
         });
       }
     };
-    
+
     document.body.appendChild(script);
 
     return () => {
@@ -58,26 +56,23 @@ export default function Partners() {
     };
   }, []);
 
-    // translate hook
-      const { t } = useTranslation();
-  
+  // translate hook
+  const { t } = useTranslation();
+
   return (
     <div className="relative w-full bg-[#0a0b1e] py-16 px-4 overflow-hidden">
-      {/* Decorative elements */}
       <div className="absolute top-10 left-10 w-20 h-20 bg-blue-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"></div>
 
-      {/* Content container */}
       <div className="max-w-6xl mx-auto text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" dir="rtl">
-        {t('sucessPartners')}
+          {t('sucessPartners')}
         </h1>
         <p className="text-gray-400 text-base md:text-lg max-w-3xl mx-auto leading-relaxed" dir="rtl">
-        {t('sucessPartnersDes')}
+          {t('sucessPartnersDes')}
         </p>
       </div>
 
-      {/* Swiper slider */}
       <div className="relative w-full overflow-hidden">
         <div ref={swiperRef} className="swiper">
           <div className="swiper-wrapper">
