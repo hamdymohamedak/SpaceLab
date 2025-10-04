@@ -2,54 +2,59 @@ import React from 'react';
 import RocketBg from "../../assets/Work/Rocket.png";
 import Blur from "../../assets/Work/Blur.png";
 import Blur2 from "../../assets/Work/Blur2.png";
+import { useTranslation } from 'react-i18next';
 
 export default function Work() {
+
+    const { t } = useTranslation()
+
     const steps = [
         {
             number: "1",
-            title: "Understanding the Client",
-            description: "We start by carefully listening to our clients to understand their goals and analyze their needs and challenges.",
-            color: "bg-[#cca63c]" // لون أصفر مشابه للصورة
+            title: t("UnderstandingTheClient"),
+            description: t("WeStartBy"),
+            color: "bg-[#cca63c]"
         },
         {
             number: "2",
-            title: "Creative Thinking",
-            description: "We conduct intensive brainstorming sessions to generate innovative ideas that achieve the defined goals.",
+            title: t("CreativeThinking"),
+            description: t("WeConduct"),
             color: "bg-[#cca63c]"
         },
         {
             number: "3",
-            title: "Strategic Planning",
-            description: "We develop a detailed action plan that defines the key project phases and the required resources.",
+            title: t("StrategicPlanning"),
+            description: t("WeDevelop"),
             color: "bg-[#cca63c]"
         },
         {
             number: "4",
-            title: "Precise Execution",
-            description: "We implement the project with high accuracy, ensuring quality at every stage.",
+            title: t("PreciseExecution"),
+            description: t("WeImplement"),
             color: "bg-[#cca63c]"
         },
         {
             number: "5",
-            title: "Review & Improvement",
-            description: "We continuously review the work and make the necessary adjustments to ensure the best results.",
+            title: t("Review&Improvement"),
+            description: t("WeContinuously"),
             color: "bg-[#cca63c]"
         },
         {
             number: "6",
-            title: "Delivery & Follow-Up",
-            description: "We deliver the final product to the client and follow up to ensure satisfaction and the achievement of goals.",
+            title: t("Delivery&Follow-Up"),
+            description: t("WeDeliver"),
             color: "bg-[#cca63c]"
         }
     ];
 
+
     return (
         <div className="relative min-h-screen bg-[#0a0b1a] overflow-hidden py-20 px-6">
             {/* Background Images */}
-            <img style={{position:"absolute",left:"0", top: "0", zIndex: 1}} src={RocketBg} alt="rocketImage" />
-            <img style={{position:"absolute",left:"0", top: "0", zIndex: 2}} src={Blur} alt="Blur" />
-            <img style={{position:"absolute",right:"0", top: "0", zIndex: 2}} src={Blur2} alt="Blur2" />
-            
+            <img style={{ position: "absolute", left: "0", top: "0", zIndex: 1 }} src={RocketBg} alt="rocketImage" />
+            <img style={{ position: "absolute", left: "0", top: "0", zIndex: 2 }} src={Blur} alt="Blur" />
+            <img style={{ position: "absolute", right: "0", top: "0", zIndex: 2 }} src={Blur2} alt="Blur2" />
+
             {/* Content */}
             <div className="relative z-10 max-w-6xl mx-auto">
                 {/* Header */}
@@ -76,7 +81,7 @@ export default function Work() {
                             <div className={`${step.color} w-12 h-12 rounded-lg flex items-center justify-center text-white text-2xl font-bold`}>
                                 {step.number}
                             </div>
-                            
+
                             {/* Content */}
                             <div className="flex-1">
                                 <h3 className="text-white text-xl font-semibold mb-1">

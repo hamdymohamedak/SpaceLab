@@ -81,6 +81,24 @@
         "description": "We provide smart system solutions to efficiently manage your operations and sales, helping you organize your business and increase profits.",
         "button": "Start Now"
       }
-    }
+    },
 
-}
+    "UnderstandingTheClient":"Understanding The Client",
+    "WeStartBy":"We start by carefully listening to our clients to understand their goals and analyze their needs and challenges.",
+
+    "CreativeThinking":"Creative Thinking",
+    "WeConduct":"We conduct intensive brainstorming sessions to generate innovative ideas that achieve the defined goals.",
+
+
+    "StrategicPlanning":"Strategic Planning",
+    "WeDevelop":"We develop a detailed action plan that defines the key project phases and the required resources.",
+
+    "PreciseExecution":"Precise Execution",
+    "WeImplement":"We implement the project with high accuracy, ensuring quality at every stage.",
+    "Review&Improvement":"Review & Improvement",
+    "WeContinuously":"We continuously review the work and make the necessary adjustments to ensure the best results.",
+
+    "Delivery&Follow-Up":"Delivery & Follow-Up",
+    "WeDeliver":"We deliver the final product to the client and follow up to ensure satisfaction and the achievement of goals."
+ 
+  }
