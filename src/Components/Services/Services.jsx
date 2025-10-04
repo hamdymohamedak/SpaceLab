@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation'; 
 
 import starsBg from '../../assets/Services/Element.png';
 import BlueBlur from '../../assets/Services/Container.png';
@@ -22,9 +23,14 @@ import DesginBg from "../../assets/Services/Desgin.png";
 import MangementBg from "../../assets/Services/Mangement.png";
 
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 export default function Services() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+
+    useEffect(() => {
+        document.documentElement.setAttribute('dir', i18n.language === 'ar' ? 'rtl' : 'ltr');
+    }, [i18n.language]);
 
     const servicesData = [
         {
@@ -54,7 +60,8 @@ export default function Services() {
             backgroundImage: SearchEngineCardBG,
             backgroundImageStyle: {
                 position: 'absolute',
-                right: 0,
+                right: i18n.language === 'ar' ? 'unset' : 0,
+                left: i18n.language === 'ar' ? 0 : 'unset',
                 bottom: 0,
                 width: '128px',
                 opacity: 0.5,
@@ -87,7 +94,8 @@ export default function Services() {
             backgroundImage: Ecommarce,
             backgroundImageStyle: {
                 position: 'absolute',
-                left: 0,
+                left: i18n.language === 'ar' ? 'unset' : 0,
+                right: i18n.language === 'ar' ? 0 : 'unset',
                 top: 0,
                 width: '192px',
                 opacity: 0.5,
@@ -103,7 +111,8 @@ export default function Services() {
             backgroundImage: DesginBg,
             backgroundImageStyle: {
                 position: 'absolute',
-                right: 0,
+                right: i18n.language === 'ar' ? 'unset' : 0,
+                left: i18n.language === 'ar' ? 0 : 'unset',
                 bottom: 0,
                 width: '160px',
                 opacity: 0.5,
@@ -129,7 +138,7 @@ export default function Services() {
     ];
 
     return (
-        <div className="relative min-h-screen bg-black py-16 px-4 overflow-visible">
+        <div className="relative min-h-screen bg-black py-16 px-4 overflow-visible" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
             <img
                 className="absolute left-[15%] top-0 pointer-events-none z-0"
                 src={starsBg}
@@ -177,6 +186,8 @@ export default function Services() {
                         pagination={{ clickable: true }}
                         spaceBetween={16}
                         slidesPerView={1.2}
+                        dir={i18n.language === 'ar' ? 'rtl' : 'ltr'} 
+                        key={i18n.language} 
                     >
                         {servicesData.map((service, index) => (
                             <SwiperSlide key={index}>
@@ -205,6 +216,8 @@ function ServiceCard({
     backgroundImage,
     backgroundImageStyle,
 }) {
+    const { i18n } = useTranslation();
+
     return (
         <div
             className={`relative rounded-2xl p-6 overflow-hidden group hover:scale-[1.02] transition-transform duration-300 ${bgStyle}`}
@@ -221,9 +234,9 @@ function ServiceCard({
                 <p className="text-white/80 text-sm mb-5 leading-relaxed flex-grow">{description}</p>
                 <a
                     href={buttonLink}
-                    className="text-white text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all mt-auto"
+                    className={`text-white text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all mt-auto ${i18n.language === 'ar' ? 'flex-row-reverse' : ''}`}
                 >
-                    {buttonText} <span>→</span>
+                    {buttonText} <span>{i18n.language === 'ar' ? '←' : '→'}</span>
                 </a>
             </div>
         </div>

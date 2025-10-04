@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Globe, Phone, Menu, X, Languages } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -24,11 +24,9 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-[#0a0a1a] text-white border-b border-gray-800/50">
+    <header className="w-full bg-[#0a0a1a] text-white border-b border-gray-800/50" dir="ltr">
       <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
-        {/* Desktop Header */}
         <div className="hidden lg:flex items-center justify-between">
-          {/* Logo */}
           <a
             href="#"
             className="text-2xl font-bold bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] bg-clip-text text-transparent transition-all duration-300 delay-150 hover:text-opacity-90"
@@ -36,7 +34,6 @@ export default function Header() {
             {t("logo")}
           </a>
 
-          {/* Navigation Links */}
           <nav className="flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
@@ -49,7 +46,6 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Buttons */}
           <div className="flex items-center gap-3">
             <button
               onClick={toggleLanguage}
@@ -65,7 +61,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Header */}
         <div className="lg:hidden flex items-center justify-between">
           <div className="flex items-center gap-3">
             <button
@@ -92,7 +87,6 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-gray-800/50 pt-4">
             <nav className="flex flex-col space-y-3">
