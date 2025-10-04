@@ -14,8 +14,9 @@ export default function WhyChooseUs() {
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
+                {/* نسخة الشاشات الكبيرة */}
                 <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-start text-left">
-                    {/* الكارت الرئيسي (زر Start Your Journey) على اليسار */}
+                    {/* الكارت الرئيسي على اليسار */}
                     <div className="relative order-first lg:order-first">
                         <div
                             style={{
@@ -65,6 +66,7 @@ export default function WhyChooseUs() {
                         </div>
 
                         <div className="space-y-6 text-left">
+                            {/* Goal-Driven Creativity */}
                             <div
                                 style={{
                                     backgroundImage: `url(${textbg})`,
@@ -74,28 +76,29 @@ export default function WhyChooseUs() {
                                 className="rounded-2xl p-6 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 text-left bg-transparent backdrop-blur-sm"
                             >
                                 <div className="flex items-start gap-5">
+                                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
+                                        <Lightbulb className="w-6 h-6 text-slate-900" />
+                                    </div>
                                     <div className="flex-1">
                                         <h3 className="text-xl font-bold text-white mb-3 text-left">{t('goalDrivenCreativity')}</h3>
                                         <p className="text-slate-400 text-sm leading-relaxed text-left">
                                             {t('goalDrivenCreativityDescription')}
                                         </p>
                                     </div>
-                                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
-                                        <Lightbulb className="w-7 h-7 text-slate-900" />
-                                    </div>
                                 </div>
                             </div>
 
+                            {/* Result-Oriented Experience */}
                             <div className="rounded-2xl p-6 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 text-left bg-transparent backdrop-blur-sm">
                                 <div className="flex items-start gap-5">
+                                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
+                                        <Target className="w-6 h-6 text-slate-900" />
+                                    </div>
                                     <div className="flex-1">
                                         <h3 className="text-xl font-bold text-white mb-3 text-left">{t('resultOrientedExperience')}</h3>
                                         <p className="text-slate-400 text-sm leading-relaxed text-left">
                                             {t('resultOrientedExperienceDescription')}
                                         </p>
-                                    </div>
-                                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
-                                        <Target className="w-6 h-6 text-slate-900" />
                                     </div>
                                 </div>
                             </div>
@@ -103,9 +106,56 @@ export default function WhyChooseUs() {
                     </div>
                 </div>
 
-                {/* نسخة الهواتف تم عكس ترتيب الكروت أيضًا */}
+                {/* نسخة الهواتف: جعل Designs That Drive Sales أول عنصر */}
                 <div className="lg:hidden space-y-8 text-left">
-                    {/* الكارت الرئيسي أولاً */}
+                    {/* كارت Designs That Drive Sales أولاً */}
+                    <div>
+                        <div className="inline-block px-4 py-2 bg-slate-800/70 rounded-full text-xs text-slate-300 mb-6 border border-slate-700 text-left">
+                            {t('whyChooseUs')}
+                        </div>
+
+                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight text-left px-4">
+                            {t('designsThatDriveSales').split(' ').slice(0,2).join(' ')} <span className="text-blue-500">{t('designsThatDriveSales').split(' ').slice(2).join(' ')}</span>
+                        </h1>
+
+                        <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-10 text-left px-4">
+                            {t('digitalSolutionsDescription')}
+                        </p>
+
+                        <div className="space-y-6 px-4 text-left">
+                            {/* Goal-Driven Creativity */}
+                            <div className="rounded-2xl p-6 border border-slate-700/50 bg-transparent backdrop-blur-sm">
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
+                                        <Lightbulb className="w-6 h-6 text-slate-900" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-lg font-bold text-white mb-2 text-left">{t('goalDrivenCreativity')}</h3>
+                                        <p className="text-slate-400 text-sm leading-relaxed text-left">
+                                            {t('goalDrivenCreativityDescription')}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Result-Oriented Experience */}
+                            <div className="rounded-2xl p-6 border border-slate-700/50 bg-transparent backdrop-blur-sm">
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
+                                        <Target className="w-6 h-6 text-slate-900" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-lg font-bold text-white mb-2 text-left">{t('resultOrientedExperience')}</h3>
+                                        <p className="text-slate-400 text-sm leading-relaxed text-left">
+                                            {t('resultOrientedExperienceDescription')}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* كارت Enhance your digital بعده */}
                     <div className="px-4 text-left">
                         <div
                             style={{
@@ -132,51 +182,6 @@ export default function WhyChooseUs() {
                                     {t('startYourJourney')}
                                     <Phone />
                                 </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* كارت Designs That Drive Sales بعده */}
-                    <div>
-                        <div className="inline-block px-4 py-2 bg-slate-800/70 rounded-full text-xs text-slate-300 mb-6 border border-slate-700 text-left">
-                            {t('whyChooseUs')}
-                        </div>
-
-                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight text-left px-4">
-                            {t('designsThatDriveSales').split(' ').slice(0,2).join(' ')} <span className="text-blue-500">{t('designsThatDriveSales').split(' ').slice(2).join(' ')}</span>
-                        </h1>
-
-                        <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-10 text-left px-4">
-                            {t('digitalSolutionsDescription')}
-                        </p>
-
-                        <div className="space-y-6 px-4 text-left">
-                            <div className="rounded-2xl p-6 border border-slate-700/50 bg-transparent backdrop-blur-sm">
-                                <div className="flex items-start gap-4">
-                                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
-                                        <Lightbulb className="w-6 h-6 text-slate-900" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-lg font-bold text-white mb-2 text-left">{t('goalDrivenCreativity')}</h3>
-                                        <p className="text-slate-400 text-sm leading-relaxed text-left">
-                                            {t('goalDrivenCreativityDescription')}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="rounded-2xl p-6 border border-slate-700/50 bg-transparent backdrop-blur-sm">
-                                <div className="flex items-start gap-4">
-                                    <div className="flex-shrink-0 w-12 h-12 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
-                                        <Target className="w-6 h-6 text-slate-900" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-lg font-bold text-white mb-2 text-left">{t('resultOrientedExperience')}</h3>
-                                        <p className="text-slate-400 text-sm leading-relaxed text-left">
-                                            {t('resultOrientedExperienceDescription')}
-                                        </p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
