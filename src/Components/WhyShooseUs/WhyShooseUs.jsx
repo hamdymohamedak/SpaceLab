@@ -7,16 +7,16 @@ export default function WhyChooseUs() {
     const { t } = useTranslation();
 
     return (
-        <div className="min-h-screen bg-slate-950 py-20 px-4 relative overflow-hidden">
+        <div className="min-h-screen bg-slate-950 py-16 px-4 relative overflow-hidden" dir={t('direction')}>
             <div className="absolute inset-0">
                 <div className="absolute top-20 left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
             </div>
 
-            <div className="max-w-7xl mx-auto relative z-10">
-                {/* نسخة الشاشات الكبيرة */}
+            <div className="max-w-6xl mx-auto relative z-10">
+                {/* Desktop version */}
                 <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-start text-left">
-                    {/* الكارت الرئيسي على اليسار */}
+                    {/* Main card on the left */}
                     <div className="relative order-first lg:order-first">
                         <div
                             style={{
@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
                         </div>
                     </div>
 
-                    {/* كارت Designs That Drive Sales على اليمين */}
+                    {/* Designs That Drive Sales card on the right */}
                     <div className="space-y-8 text-left order-last lg:order-last">
                         <div>
                             <div className="inline-block px-4 py-2 bg-slate-800/70 rounded-full text-xs text-slate-300 mb-6 border border-slate-700 text-left">
@@ -106,9 +106,9 @@ export default function WhyChooseUs() {
                     </div>
                 </div>
 
-                {/* نسخة الهواتف: جعل Designs That Drive Sales أول عنصر */}
+                {/* Mobile version: Designs That Drive Sales first */}
                 <div className="lg:hidden space-y-8 text-left">
-                    {/* كارت Designs That Drive Sales أولاً */}
+                    {/* Designs That Drive Sales card first */}
                     <div>
                         <div className="inline-block px-4 py-2 bg-slate-800/70 rounded-full text-xs text-slate-300 mb-6 border border-slate-700 text-left">
                             {t('whyChooseUs')}
@@ -155,7 +155,7 @@ export default function WhyChooseUs() {
                         </div>
                     </div>
 
-                    {/* كارت Enhance your digital بعده */}
+                    {/* Enhance your digital card next */}
                     <div className="px-4 text-left">
                         <div
                             style={{
@@ -190,4 +190,3 @@ export default function WhyChooseUs() {
         </div>
     );
 }
-    
