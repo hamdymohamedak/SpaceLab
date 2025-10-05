@@ -24,7 +24,7 @@ export default function Portfolio() {
     }, [i18n.language]);
 
     return (
-        <section className="relative bg-black text-white py-16 px-4 overflow-hidden" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
+        <section className="relative bg-[#0A0A0F] text-white py-16 px-4 overflow-hidden" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
             <div className="relative max-w-6xl mx-auto">
                 <img
                     style={{

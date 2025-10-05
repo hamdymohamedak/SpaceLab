@@ -26,16 +26,16 @@ export default function Footer() {
     }, []);
 
     return (
-        <footer className="bg-slate-950 text-white py-12 px-8 relative overflow-hidden">
-            {/* <img
+        <footer className="bg-[#0A0A0F] text-white py-12 px-8 relative overflow-hidden">
+            <img
                 src={MiniBlue}
                 alt="Mini Blue"
                 style={{
                     position: "absolute",
                     left: 0,
                     bottom: 0,
-                    width: "600px",
-                    height: "600px",
+                   width: "800px",
+                    height: "800px",
                     zIndex: 1,
                     objectFit: "contain",
                 }}
@@ -47,12 +47,12 @@ export default function Footer() {
                     position: "absolute",
                     right: 0,
                     bottom: 0,
-                    width: "600px",
-                    height: "600px",
+                    width: "800px",
+                    height: "800px",
                     zIndex: 0,
                     objectFit: "contain",
                 }}
-            /> */}
+            />
 
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">

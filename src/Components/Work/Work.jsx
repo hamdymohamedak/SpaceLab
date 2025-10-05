@@ -49,7 +49,7 @@ export default function Work() {
 
 
     return (
-        <div className="relative min-h-screen bg-[#0a0b1a] overflow-hidden py-20 px-6">
+        <div className="relative min-h-screen bg-[#0A0A0F] overflow-hidden py-20 px-6">
             <img style={{ position: "absolute", left: "0", top: "0", zIndex: 1 }} src={RocketBg} alt="rocketImage" />
             <img style={{ position: "absolute", left: "0", top: "0", zIndex: 2 }} src={Blur} alt="Blur" />
             <img style={{ position: "absolute", right: "0", top: "0", zIndex: 2 }} src={Blur2} alt="Blur2" />

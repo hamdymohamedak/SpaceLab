@@ -85,7 +85,7 @@ export default function Partners() {
   const { t } = useTranslation();
 
   return (
-    <div className="relative w-full bg-[#0a0b1e] py-16 px-4 overflow-hidden">
+    <div className="relative w-full bg-[#0A0A0F] py-16 px-4 overflow-hidden">
       <div className="absolute top-10 left-10 w-20 h-20 bg-blue-500/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"></div>
 

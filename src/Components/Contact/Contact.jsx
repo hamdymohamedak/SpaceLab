@@ -16,7 +16,7 @@ export default function Contact() {
     };
 
     return (
-        <section className="relative w-full min-h-screen bg-[#0a0b0d] flex flex-col md:flex-row items-center justify-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 overflow-visible">
+        <section className="relative w-full min-h-screen bg-[#0A0A0F] flex flex-col md:flex-row items-center justify-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 overflow-visible">
 
             <img src={star} alt="star" className="absolute w-16 top-10 left-10 opacity-80" />
             <img src={bottomStar} alt="bottom star" className="absolute w-12 bottom-10 right-10 opacity-80" />

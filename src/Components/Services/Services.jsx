@@ -138,7 +138,7 @@ export default function Services() {
     ];
 
     return (
-        <div className="relative min-h-screen bg-black py-16 px-4 overflow-visible" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
+        <div className="relative min-h-screen bg-[#0A0A0F] py-16 px-4 overflow-visible" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
             <img
                 className="absolute left-[15%] top-0 pointer-events-none z-0"
                 src={starsBg}
