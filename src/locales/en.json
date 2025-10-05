@@ -120,5 +120,65 @@
       "design": "UI/UX Design"
     },
     "buttonText": "Send"
+  },
+
+  
+  "brand": "SpaceLab",
+  "Footerdescription": "We envision your ideas into innovative digital solutions. We give your brand a promising start to open beyond borders. We believe in delivering projects on time, passing into the future.",
+  "socialMedia": {
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "facebook": "Facebook"
+  },
+  "sections": {
+    "ourServices": {
+      "title": "Our Services",
+      "items": [
+        "Search Engine Optimization",
+        "Campaign Management",
+        "National Development",
+        "Graphic Design & Branding"
+      ]
+    },
+    "helpCenter": {
+      "title": "Help Center",
+      "items": [
+        "FAQs",
+        "Articles & Insights",
+        "User Guidelines",
+        "Technical Support"
+      ]
+    },
+    "otherLinks": {
+      "title": "Other Links",
+      "items": [
+        "About Us",
+        "Services",
+        "Portfolio"
+      ]
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "phone": "+966573434567",
+      "email": "info@spacelab.com",
+      "contactLink": "Contact Us"
+    }
+  },
+  "serviceLocations": {
+    "title": "We provide our services in :",
+    "countries": [
+      "Saudi Arabia",
+      "UAE",
+      "Egypt",
+      "Kuwait",
+      "Bahrain",
+      "Oman",
+      "Qatar",
+      "Turkey",
+      "Sudan"
+    ]
   }
+
+
 }

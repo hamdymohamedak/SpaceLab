@@ -3,7 +3,7 @@ import { Send, Mail, User, Phone, Briefcase, ChevronDown } from "lucide-react";
 import ManAtSpace from "../../assets/Contact/ManAtSpace.png";
 import BlurAtManAtSpace from "../../assets/Contact/Blur.png";
 import star from "../../assets/Contact/Star.png";
-import bottomStar from "../../assets/Contact/BottomStar.png";
+// import bottomStar from "../../assets/Contact/BottomStar.png";
 import { useTranslation } from "react-i18next";
 
 export default function Contact() {
@@ -18,8 +18,7 @@ export default function Contact() {
     return (
         <section className="relative w-full min-h-screen bg-[#0A0A0F] flex flex-col md:flex-row items-center justify-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 overflow-visible">
 
-            <img src={star} alt="star" className="absolute w-16 top-10 left-10 opacity-80" />
-            <img src={bottomStar} alt="bottom star" className="absolute w-12 bottom-10 right-10 opacity-80" />
+            <img src={star} alt="star" className="absolute w-30 top-10 left-10 opacity-80" />
 
             <div className="max-w-full sm:max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto w-full flex flex-col md:flex-row gap-6">
 

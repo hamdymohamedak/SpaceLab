@@ -11,14 +11,13 @@ import Draw from "../../assets/Portfolio/Draw.jpg";
 import Analysis from "../../assets/Portfolio/Analysis.jpg";
 import DesktopScreen from "../../assets/Portfolio/DeskTopScreen.jpg";
 import Light from "../../assets/Portfolio/Light.png";
-
 import { useTranslation } from "react-i18next";
 
 export default function Portfolio() {
     const images = [MobileImage, Draw, Analysis, DesktopScreen];
     const { t, i18n } = useTranslation();
 
-    // تحديث اتجاه الصفحة بناء على اللغة
+    
     useEffect(() => {
         document.documentElement.setAttribute('dir', i18n.language === 'ar' ? 'rtl' : 'ltr');
     }, [i18n.language]);
@@ -35,7 +34,7 @@ export default function Portfolio() {
                     alt=""
                 />
 
-                {/* Mobile Version */}
+               
                 <div className="lg:hidden space-y-10">
                     <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6">
 
@@ -66,7 +65,7 @@ export default function Portfolio() {
                         spaceBetween={16}
                         slidesPerView={1}
                         dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
-                        key={i18n.language} // يعيد رسم الـ Swiper عند تغيير اللغة
+                        key={i18n.language}
                         className="rounded-3xl overflow-hidden shadow-2xl"
                     >
                         {images.map((img, i) => (
@@ -85,7 +84,7 @@ export default function Portfolio() {
                     </Swiper>
                 </div>
 
-                {/* Desktop Version */}
+                
                 <div className="hidden lg:grid grid-cols-2 gap-12 items-center">
                     <div className="grid grid-cols-2 gap-4">
                         {[MobileImage, Draw].map((img, i) => (

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function Partners() {
-  // كرر العناصر ثلاث مرات لضمان التكرار السلس
+
   const initialPartners = [
     "Partners",
     "SmartSys",
@@ -39,19 +39,19 @@ export default function Partners() {
           slidesPerView: 'auto',
           spaceBetween: 16,
           loop: true,
-          loopedSlides: initialPartners.length * 3, // عدد العناصر الكلي بعد التكرار
-          speed: 6000, // سرعة أبطأ للحركة المستمرة
+          loopedSlides: initialPartners.length * 3, 
+          speed: 6000, 
           autoplay: {
             delay: 0,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true, // توقف مؤقت عند التحويم
+            pauseOnMouseEnter: true, 
             reverseDirection: false,
           },
           freeMode: {
             enabled: true,
-            momentum: false, // إيقاف الزخم للحركة المستمرة
+            momentum: false,
           },
-          centeredSlides: false, // عدم توسيط الشرائح
+          centeredSlides: false, 
           breakpoints: {
             320: {
               spaceBetween: 8,
@@ -63,13 +63,11 @@ export default function Partners() {
               spaceBetween: 16,
             },
           },
-          // تحسين التكرار والأداء
           watchSlidesProgress: true,
-          resistanceRatio: 0, // منع التوقف عند الحواف
+          resistanceRatio: 0,
           slidesPerGroup: 1,
           updateOnWindowResize: true,
-          // تحسين التمرير اللانهائي
-          loopAdditionalSlides: initialPartners.length, // إضافة شرائح إضافية للتكرار
+          loopAdditionalSlides: initialPartners.length,
         });
       }
     };
