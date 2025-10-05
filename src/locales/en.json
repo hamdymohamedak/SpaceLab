@@ -178,7 +178,74 @@
       "Turkey",
       "Sudan"
     ]
-  }
+  },
+
+  
+    "header": "PROJECTS",
+  "filters": [
+    "All",
+    "Java",
+    "Web Design/Development",
+    "App Development",
+    "E-Commerce",
+    "Branding",
+    "All Filter"
+  ],
+
+
+
+  "projects": [
+    {
+      "title": "Merdami",
+      "des": "UI/UX, App Development",
+      "category": "Mobile App"
+    },
+    {
+      "title": "Buraq Air",
+      "des": "UI/UX, web design/development",
+      "category": "Web Development"
+    },
+    {
+      "title": "Alhakeem Co",
+      "des": "UI/UX, web design/development, app development",
+      "category": "E-Commerce"
+    },
+    {
+      "title": "MREIC",
+      "des": "UI/UX, web design/development, app development",
+      "category": "Web Development"
+    },
+    {
+      "title": "Afriqiyah Airways",
+      "des": "UI/UX, web design/development",
+      "category": "Web Development"
+    },
+    {
+      "title": "Libyana",
+      "des": "UI/UX, web design/development",
+      "category": "Branding"
+    },
+    {
+      "title": "ls.gives",
+      "des": "UI/UX, web design/development",
+      "category": "Branding"
+    },
+    {
+      "title": "LYPay Instant Payment Service",
+      "des": "UI/UX, web design/development",
+      "category": "Branding"
+    },
+    {
+      "title": "Informatics Governance Forum",
+      "des": "UI/UX, web design/development",
+      "category": "Branding"
+    },
+    {
+      "title": "Birds",
+      "des": "UI/UX, web design/development, Branding",
+      "category": "Branding"
+    }
+  ]
 
 
 }

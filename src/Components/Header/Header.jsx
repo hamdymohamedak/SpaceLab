@@ -14,7 +14,7 @@ export default function Header() {
     { label: t("nav.about"), href: "#" },
     { label: t("nav.services"), href: "#" },
     { label: t("nav.process"), href: "#" },
-    { label: t("nav.projects"), href: "#" },
+    { label: t("nav.projects"), href: "/projects" },
     { label: t("nav.contact"), href: "#" },
   ];
 
