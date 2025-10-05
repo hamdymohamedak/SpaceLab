@@ -12,8 +12,11 @@ import Analysis from "../../assets/Portfolio/Analysis.jpg";
 import DesktopScreen from "../../assets/Portfolio/DeskTopScreen.jpg";
 import Light from "../../assets/Portfolio/Light.png";
 
+import { useTranslation } from "react-i18next";
+
 export default function Portfolio() {
     const images = [MobileImage, Draw, Analysis, DesktopScreen];
+    const { t } = useTranslation();
 
     return (
         <section className="relative bg-black text-white py-16 px-4 overflow-hidden">
@@ -27,26 +30,27 @@ export default function Portfolio() {
                     alt=""
                 />
 
+                {/* Mobile Version */}
                 <div className="lg:hidden space-y-10">
                     <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6">
 
                         <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-200 border-b-2 border-yellow-400 pb-1">
-                            Our Portfolio
+                            {t("ContactsectionTitle")}
                         </h3>
 
                         <h2 className="text-3xl sm:text-4xl font-bold leading-tight">
-                            A Journey of <br />
+                            {t("headingLine1")} <br />
                             <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text text-transparent">
-                                Creativity & Innovation
+                                {t("headingLine2")}
                             </span>
                         </h2>
 
                         <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-md">
-                            Discover how we transformed ideas into inspiring projects that serve our clients and deliver tangible results.
+                            {t("description")}
                         </p>
 
                         <button className="group flex items-center gap-3 px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-                            <span className="text-sm">Our Portfolio</span>
+                            <span className="text-sm">{t("buttonText")}</span>
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>
                     </div>
@@ -74,6 +78,7 @@ export default function Portfolio() {
                     </Swiper>
                 </div>
 
+                {/* Desktop Version */}
                 <div className="hidden lg:grid grid-cols-2 gap-12 items-center">
                     <div className="grid grid-cols-2 gap-4">
                         {[MobileImage, Draw].map((img, i) => (
@@ -97,22 +102,22 @@ export default function Portfolio() {
                     <div className="flex flex-col justify-center space-y-6 lg:pl-8">
                         <div className="p-8 space-y-6">
                             <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-200 border-b-2 border-yellow-400 inline-block pb-1">
-                                Our Portfolio
+                                {t("ContactsectionTitle")}
                             </h3>
 
                             <h2 className="text-4xl xl:text-5xl font-bold leading-tight">
-                                A Journey of <br />
+                                {t("headingLine1")} <br />
                                 <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text text-transparent">
-                                    Creativity & Innovation
+                                    {t("headingLine2")}
                                 </span>
                             </h2>
 
                             <p className="text-gray-400 text-base leading-relaxed">
-                                Discover how we transformed ideas into inspiring projects that serve our clients and deliver tangible results.
+                                {t("description")}
                             </p>
 
                             <button className="group flex items-center gap-3 px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-                                <span className="text-sm">Our Portfolio</span>
+                                <span className="text-sm">{t("buttonText")}</span>
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </button>
                         </div>
