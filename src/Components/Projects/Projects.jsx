@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 export default function Projects() {
   const { t } = useTranslation();
 
-  // اختيار All Products افتراضيًا
+
   const [activeFilter, setActiveFilter] = useState(t('filters.0'));
 
   // تحديث الفلتر عند تغيير اللغة
@@ -36,12 +36,12 @@ export default function Projects() {
   ];
 
   const filters = [
-    t('filters.0'), // All
-    t('filters.1'), // Java
-    t('filters.2'), // Web Design/Development
-    t('filters.3'), // App Development
-    t('filters.4'), // E-Commerce
-    t('filters.5')  // Branding
+    t('filters.0'),
+    t('filters.1'),
+    t('filters.2'),
+    t('filters.3'),
+    t('filters.4'),
+    t('filters.5')
   ];
 
   const filteredProjects = activeFilter === t('filters.0')
@@ -51,21 +51,20 @@ export default function Projects() {
   return (
     <div className="min-h-screen p-8">
       <div className="relative max-w-6xl mx-auto">
-        {/* Header */}
+
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-6">{t('header')}</h1>
 
-          {/* Filter Buttons */}
+
           <div className="flex flex-wrap gap-3">
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeFilter === filter
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === filter
                     ? 'bg-yellow-400 text-black'
                     : 'bg-slate-800/50 text-white hover:bg-slate-700/50 border border-slate-700'
-                }`}
+                  }`}
               >
                 {filter}
               </button>
@@ -73,7 +72,7 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Projects Grid */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredProjects.map((project) => (
             <div

@@ -36,7 +36,7 @@ export default function Portfolio() {
                     alt=""
                 />
 
-                {/* Mobile Version */}
+         
                 <div className="lg:hidden space-y-10">
                     <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6">
 
@@ -86,7 +86,6 @@ export default function Portfolio() {
                     </Swiper>
                 </div>
 
-                {/* Desktop Version */}
                 <div className="hidden lg:grid grid-cols-2 gap-12 items-center">
                     <div className="grid grid-cols-2 gap-4">
                         {[MobileImage, Draw].map((img, i) => (
