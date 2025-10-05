@@ -118,8 +118,34 @@
   "headingLine1": "A Journey of",
   "headingLine2": "Creativity & Innovation",
   "description": "Discover how we transformed ideas into inspiring projects that serve our clients and deliver tangible results.",
-  "buttonText": "Our Portfolio"
+  "buttonText": "Our Portfolio",
   
   
+    "contact": {
+    "sectionTitle": "Contact Us",
+    "heading": "We welcome your contact",
+
+    "labels": {
+      "email": "Email",
+      "fullName": "Full name",
+      "service": "Service",
+      "phone": "Phone number"
+    },
+
+    "placeholders": {
+      "email": "Enter your email",
+      "fullName": "Enter your name",
+      "service": "Choose a service",
+      "phone": "Enter your phone"
+    },
+
+    "services": {
+      "web": "Web Development",
+      "mobile": "Mobile Development",
+      "design": "UI/UX Design"
+    },
+
+    "buttonText": "Send"
+  }
   
   }
