@@ -1,152 +1,243 @@
-import React, { useEffect } from "react";
-import { ArrowRight } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import {
+    TrendingUp,
+    Search,
+    Users,
+    ShoppingCart,
+    PenTool,
+    Settings,
+} from 'lucide-react';
 
-import "swiper/css";
-import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
-import MobileImage from "../../assets/Portfolio/MobileImage.jpg";
-import Draw from "../../assets/Portfolio/Draw.jpg";
-import Analysis from "../../assets/Portfolio/Analysis.jpg";
-import DesktopScreen from "../../assets/Portfolio/DeskTopScreen.jpg";
-import Light from "../../assets/Portfolio/Light.png";
-import { useTranslation } from "react-i18next";
+import starsBg from '../../assets/Services/Element.png';
+import BlueBlur from '../../assets/Services/Container.png';
+import SearchEngineCardBG from '../../assets/Services/Group 5.png';
+import MarketBg from "../../assets/Services/Market.png";
+import SocialMedia from "../../assets/Services/SocialMedia.png";
+import Ecommarce from "../../assets/Services/ECommerce.png";
+import DesginBg from "../../assets/Services/Desgin.png";
+import MangementBg from "../../assets/Services/Mangement.png";
 
-export default function Portfolio() {
-    const images = [MobileImage, Draw, Analysis, DesktopScreen];
+import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
+
+export default function Services() {
     const { t, i18n } = useTranslation();
 
-    
     useEffect(() => {
         document.documentElement.setAttribute('dir', i18n.language === 'ar' ? 'rtl' : 'ltr');
+        document.documentElement.setAttribute('lang', i18n.language);
     }, [i18n.language]);
 
+    const servicesData = [
+        {
+            title: t('cards.marketing.title'),
+            description: t('cards.marketing.description'),
+            icon: TrendingUp,
+            bgStyle: 'bg-gradient-to-br from-[#8B5CF6] to-[#A855F7]',
+            buttonText: t('cards.marketing.button'),
+            buttonLink: '#',
+            backgroundImage: MarketBg,
+            backgroundImageStyle: {
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                opacity: 0.5,
+            },
+        },
+        {
+            title: t('cards.seo.title'),
+            description: t('cards.seo.description'),
+            icon: Search,
+            bgStyle: 'bg-gradient-to-br from-[#141116] to-[#4A5A7A]',
+            buttonText: t('cards.seo.button'),
+            buttonLink: '#',
+            backgroundImage: SearchEngineCardBG,
+            backgroundImageStyle: {
+                position: 'absolute',
+                right: i18n.language === 'ar' ? 'unset' : 0,
+                left: i18n.language === 'ar' ? 0 : 'unset',
+                bottom: 0,
+                width: '128px',
+                opacity: 0.5,
+            },
+        },
+        {
+            title: t('cards.socialMedia.title'),
+            description: t('cards.socialMedia.description'),
+            icon: Users,
+            bgStyle: 'bg-gradient-to-br from-[#141116] to-[#374151]',
+            buttonText: t('cards.socialMedia.button'),
+            buttonLink: '#',
+            backgroundImage: SocialMedia,
+            backgroundImageStyle: {
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                opacity: 0.5,
+            },
+        },
+        {
+            title: t('cards.ecommerce.title'),
+            description: t('cards.ecommerce.description'),
+            icon: ShoppingCart,
+            bgStyle: 'bg-gradient-to-br from-[#6366F1] to-[#818CF8]',
+            buttonText: t('cards.ecommerce.button'),
+            buttonLink: '#',
+            backgroundImage: Ecommarce,
+            backgroundImageStyle: {
+                position: 'absolute',
+                left: i18n.language === 'ar' ? 'unset' : 0,
+                right: i18n.language === 'ar' ? 0 : 'unset',
+                top: 0,
+                width: '192px',
+                opacity: 0.5,
+            },
+        },
+        {
+            title: t('cards.graphicDesign.title'),
+            description: t('cards.graphicDesign.description'),
+            icon: PenTool,
+            bgStyle: 'bg-gradient-to-br from-[#8B5CF6] to-[#A855F7]',
+            buttonText: t('cards.graphicDesign.button'),
+            buttonLink: '#',
+            backgroundImage: DesginBg,
+            backgroundImageStyle: {
+                position: 'absolute',
+                right: i18n.language === 'ar' ? 'unset' : 0,
+                left: i18n.language === 'ar' ? 0 : 'unset',
+                bottom: 0,
+                width: '160px',
+                opacity: 0.5,
+            },
+        },
+        {
+            title: t('cards.managementSystems.title'),
+            description: t('cards.managementSystems.description'),
+            icon: Settings,
+            bgStyle: 'bg-gradient-to-br from-[#141116] to-[#4A5A7A]',
+            buttonText: t('cards.managementSystems.button'),
+            buttonLink: '#',
+            backgroundImage: MangementBg,
+            backgroundImageStyle: {
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                opacity: 0.5,
+            },
+        },
+    ];
+
     return (
-        <section className="relative bg-[#0A0A0F] text-white py-16 px-4 overflow-hidden" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
-            <div className="relative max-w-6xl mx-auto">
-                <img
-                    style={{
-                        position: "absolute",
-                        right: "20%",
-                    }}
-                    src={Light}
-                    alt=""
-                />
+        <div className={`relative min-h-screen bg-[#0A0A0F] py-16 px-4 overflow-visible ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`} dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
+            <img
+                className="absolute left-[15%] top-0 pointer-events-none z-0"
+                src={starsBg}
+                alt="starsBg"
+            />
+            <img
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
+                src={BlueBlur}
+                alt="BlueBlur"
+            />
+            <img
+                className="absolute right-[15%] top-[10%] pointer-events-none z-0"
+                src={BlueBlur}
+                alt="BlueBlur"
+            />
 
-               
-                <div className="lg:hidden space-y-10">
-                    <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6">
+            <div className={`relative max-w-6xl mx-auto ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}>
+                <div className="text-center mb-12">
+                    <p className="text-gray-500 text-xs uppercase tracking-wider mb-3">
+                        {t('sectionLabel')}
+                    </p>
+                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
+                        {t('sectionTitle').replace(
+                            t('sectionHighlight'),
+                            ''
+                        )}
+                        <br />
+                        <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-purple-600 bg-clip-text text-transparent">
+                            {t('sectionHighlight')}
+                        </span>
+                    </h1>
+                    <p className="text-gray-500 text-sm max-w-3xl mx-auto leading-relaxed">
+                        {t('sectionDescription')}
+                    </p>
+                </div>
 
-                        <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-200 border-b-2 border-yellow-400 pb-1">
-                            {t("ContactsectionTitle")}
-                        </h3>
-
-                        <h2 className="text-3xl sm:text-4xl font-bold leading-tight">
-                            {t("headingLine1")} <br />
-                            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text text-transparent">
-                                {t("headingLine2")}
-                            </span>
-                        </h2>
-
-                        <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-md">
-                            {t("description")}
-                        </p>
-
-                        <button className="group flex items-center gap-3 px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-                            <span className="text-sm">{t("buttonText")}</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                    </div>
-
+                {/* Swiper للشاشات الصغيرة */}
+                <div className="block md:hidden">
                     <Swiper
                         modules={[Pagination]}
                         pagination={{ clickable: true }}
                         spaceBetween={16}
-                        slidesPerView={1}
-                        dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
+                        slidesPerView="auto"
+                        centeredSlides={true}
+                        direction={i18n.language === 'ar' ? 'rtl' : 'ltr'}
                         key={i18n.language}
-                        className="rounded-3xl overflow-hidden shadow-2xl"
+                        className="overflow-visible"
                     >
-                        {images.map((img, i) => (
-                            <SwiperSlide key={i}>
-                                <div
-                                    className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl"
-                                    style={{
-                                        backgroundImage: `url(${img})`,
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                        backgroundRepeat: "no-repeat",
-                                    }}
-                                />
+                        {servicesData.map((service, index) => (
+                            <SwiperSlide key={index} style={{ width: '80%' }}>
+                                <ServiceCard {...service} />
                             </SwiperSlide>
                         ))}
                     </Swiper>
                 </div>
 
-                
-                <div className="hidden lg:grid grid-cols-2 gap-12 items-center">
-                    <div className="grid grid-cols-2 gap-4">
-                        {[MobileImage, Draw].map((img, i) => (
-                            <div
-                                key={i}
-                                className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/5]"
-                            >
-                                <div
-                                    style={{
-                                        backgroundImage: `url(${img})`,
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                        backgroundRepeat: "no-repeat",
-                                    }}
-                                    className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900"
-                                />
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="flex flex-col justify-center space-y-6 lg:pl-8">
-                        <div className="p-8 space-y-6">
-                            <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-200 border-b-2 border-yellow-400 inline-block pb-1">
-                                {t("ContactsectionTitle")}
-                            </h3>
-
-                            <h2 className="text-4xl xl:text-5xl font-bold leading-tight">
-                                {t("headingLine1")} <br />
-                                <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-400 bg-clip-text text-transparent">
-                                    {t("headingLine2")}
-                                </span>
-                            </h2>
-
-                            <p className="text-gray-400 text-base leading-relaxed">
-                                {t("description")}
-                            </p>
-
-                            <button className="group flex items-center gap-3 px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-                                <span className="text-sm">{t("buttonText")}</span>
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </button>
-                        </div>
-                    </div>
-
-                    {[Analysis, DesktopScreen].map((img, i) => (
-                        <div
-                            key={i}
-                            className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]"
-                        >
-                            <div
-                                style={{
-                                    backgroundImage: `url(${img})`,
-                                    backgroundSize: "cover",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                }}
-                                className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900"
-                            />
-                        </div>
+                {/* Grid للشاشات الكبيرة */}
+                <div className="hidden md:grid grid-cols-2 gap-6">
+                    {servicesData.map((service, index) => (
+                        <ServiceCard key={index} {...service} />
                     ))}
                 </div>
             </div>
-        </section>
+        </div>
+    );
+}
+
+function ServiceCard({
+    title,
+    description,
+    bgStyle,
+    buttonText,
+    buttonLink,
+    backgroundImage,
+    backgroundImageStyle,
+}) {
+    const { i18n } = useTranslation();
+
+    return (
+        <div
+            className={`relative rounded-2xl p-6 group hover:scale-[1.02] transition-transform duration-300 ${bgStyle} ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}
+        >
+            {backgroundImage && (
+                <img
+                    src={backgroundImage}
+                    alt=""
+                    style={backgroundImageStyle}
+                />
+            )}
+            <div className="relative z-10 flex flex-col h-full">
+                <h3 className="text-white text-lg font-bold mb-3 leading-tight">{title}</h3>
+                <p className="text-white/80 text-sm mb-5 leading-relaxed flex-grow">{description}</p>
+                <a
+                    href={buttonLink}
+                    className={`text-white text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all mt-auto ${i18n.language === 'ar' ? 'flex-row-reverse' : ''}`}
+                >
+                    {buttonText} <span>{i18n.language === 'ar' ? '←' : '→'}</span>
+                </a>
+            </div>
+        </div>
     );
 }

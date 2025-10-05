@@ -13,9 +13,8 @@ function App() {
   return (
     <>
       <Header />
-      <section dir={language === "ar" ? "rtl" : "ltr"}>
         <Hero />
-      </section>
+ 
     </>
   );
 }

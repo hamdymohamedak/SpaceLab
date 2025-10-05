@@ -30,6 +30,7 @@ export default function Services() {
 
     useEffect(() => {
         document.documentElement.setAttribute('dir', i18n.language === 'ar' ? 'rtl' : 'ltr');
+        document.documentElement.setAttribute('lang', i18n.language);
     }, [i18n.language]);
 
     const servicesData = [
@@ -138,7 +139,7 @@ export default function Services() {
     ];
 
     return (
-        <div className="relative min-h-screen bg-[#0A0A0F] py-16 px-4 overflow-visible" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
+        <div className={`relative min-h-screen bg-[#0A0A0F] py-16 px-4 overflow-visible ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`} dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
             <img
                 className="absolute left-[15%] top-0 pointer-events-none z-0"
                 src={starsBg}
@@ -160,7 +161,7 @@ export default function Services() {
             <div className="absolute top-32 right-20 w-24 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent -rotate-45 pointer-events-none" />
             <div className="absolute bottom-32 right-32 w-32 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent rotate-45 pointer-events-none" />
 
-            <div className="relative max-w-6xl mx-auto">
+            <div className={`relative max-w-6xl mx-auto ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}>
                 <div className="text-center mb-12">
                     <p className="text-gray-500 text-xs uppercase tracking-wider mb-3">
                         {t('sectionLabel')}
@@ -181,20 +182,30 @@ export default function Services() {
                 </div>
 
                 <div className="block md:hidden">
-                    <Swiper
-                        modules={[Pagination]}
-                        pagination={{ clickable: true }}
-                        spaceBetween={16}
-                        slidesPerView={1.2}
-                        dir={i18n.language === 'ar' ? 'rtl' : 'ltr'} 
-                        key={i18n.language} 
-                    >
-                        {servicesData.map((service, index) => (
-                            <SwiperSlide key={index}>
-                                <ServiceCard {...service} />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                    <div className={i18n.language === 'ar' ? 'pr-4 -mr-4' : 'pl-4 -ml-4'}>
+                        <Swiper
+                            modules={[Pagination]}
+                            pagination={{ clickable: true }}
+                            spaceBetween={16}
+                            slidesPerView={1.2}
+                            dir={i18n.language === 'ar' ? 'rtl' : 'ltr'} 
+                            key={i18n.language}
+                            style={{
+                                width: '100vw',
+                                position: 'relative',
+                                right: i18n.language === 'ar' ? '16px' : '0',
+                                left: i18n.language === 'ar' ? '0' : '16px',
+                            }}
+                        >
+                            {servicesData.map((service, index) => (
+                                <SwiperSlide key={index}>
+                                    <div className={i18n.language === 'ar' ? 'pr-4' : 'pl-4'}>
+                                        <ServiceCard {...service} />
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
                 </div>
 
                 <div className="hidden md:grid grid-cols-2 gap-6">
@@ -220,7 +231,7 @@ function ServiceCard({
 
     return (
         <div
-            className={`relative rounded-2xl p-6 overflow-hidden group hover:scale-[1.02] transition-transform duration-300 ${bgStyle}`}
+            className={`relative rounded-2xl p-6 overflow-hidden group hover:scale-[1.02] transition-transform duration-300 ${bgStyle} ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}
         >
             {backgroundImage && (
                 <img
