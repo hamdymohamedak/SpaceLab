@@ -1,8 +1,8 @@
 import React from "react";
 import { Send, Mail, User, Phone, Briefcase, ChevronDown } from "lucide-react";
-import ManAtSpace from "../../assets/Contact/ManAtSpace.png";
-import BlurAtManAtSpace from "../../assets/Contact/Blur.png";
-import star from "../../assets/Contact/Star.png";
+import ManAtSpace from "../../assets/Contact/ManAtSpace.webp";
+import BlurAtManAtSpace from "../../assets/Contact/Blur.webp";
+import star from "../../assets/Contact/Star.webp";
 // import bottomStar from "../../assets/Contact/BottomStar.png";
 import { useTranslation } from "react-i18next";
 

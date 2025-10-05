@@ -1,7 +1,7 @@
 import React from 'react';
-import RocketBg from "../../assets/Work/Rocket.png";
-import Blur from "../../assets/Work/Blur.png";
-import Blur2 from "../../assets/Work/Blur2.png";
+import RocketBg from "../../assets/Work/Rocket.webp";
+import Blur from "../../assets/Work/Blur.webp";
+import Blur2 from "../../assets/Work/Blur2.webp";
 import { useTranslation } from 'react-i18next';
 
 export default function Work() {

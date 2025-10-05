@@ -6,11 +6,11 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import MobileImage from "../../assets/Portfolio/MobileImage.jpg";
-import Draw from "../../assets/Portfolio/Draw.jpg";
-import Analysis from "../../assets/Portfolio/Analysis.jpg";
-import DesktopScreen from "../../assets/Portfolio/DeskTopScreen.jpg";
-import Light from "../../assets/Portfolio/Light.png";
+import MobileImage from "../../assets/Portfolio/MobileImage.webp";
+import Draw from "../../assets/Portfolio/Draw.webp";
+import Analysis from "../../assets/Portfolio/Analysis.webp";
+import DesktopScreen from "../../assets/Portfolio/DeskTopScreen.webp";
+import Light from "../../assets/Portfolio/Light.webp";
 
 import { useTranslation } from "react-i18next";
 

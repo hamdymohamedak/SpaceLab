@@ -1,6 +1,6 @@
 import React from 'react';
 import { Lightbulb, Target, Phone } from 'lucide-react';
-import textbg from "../../assets/whyShooseUs/textBG.png";
+import textbg from "../../assets/whyShooseUs/textBG.webp";
 import { useTranslation } from 'react-i18next';
 
 export default function WhyChooseUs() {

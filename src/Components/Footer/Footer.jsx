@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Phone, Mail } from 'lucide-react';
-import Bahrin from '../../assets/Footer/Bahrin.png';
-import Egypt from '../../assets/Footer/Egypt.png';
-import FaceBook from '../../assets/Footer/FaceBook.png';
-import instagram from '../../assets/Footer/Instagram.png';
-import kewit from '../../assets/Footer/Kewit.png';
-import Linkedin from '../../assets/Footer/Linkedin.png';
-import Oman from '../../assets/Footer/Oman.png';
-import Qatar from '../../assets/Footer/Qatar.png';
-import Sudan from '../../assets/Footer/Sudan.png';
-import SudiArabia from '../../assets/Footer/SudiArabia.png';
-import Turkey from '../../assets/Footer/Turkey.png';
-import Twitter from '../../assets/Footer/Twitter.png';
-import UAE from '../../assets/Footer/UAE.png';
-import Blur from "../../assets/Footer/Blur.png";
-import MiniBlue from "../../assets/Footer/MiniBlue.png";
+import Bahrin from '../../assets/Footer/Bahrin.webp';
+import Egypt from '../../assets/Footer/Egypt.webp';
+import FaceBook from '../../assets/Footer/FaceBook.webp';
+import instagram from '../../assets/Footer/Instagram.webp';
+import kewit from '../../assets/Footer/Kewit.webp';
+import Linkedin from '../../assets/Footer/Linkedin.webp';
+import Oman from '../../assets/Footer/Oman.webp';
+import Qatar from '../../assets/Footer/Qatar.webp';
+import Sudan from '../../assets/Footer/Sudan.webp';
+import SudiArabia from '../../assets/Footer/SudiArabia.webp';
+import Turkey from '../../assets/Footer/Turkey.webp';
+import Twitter from '../../assets/Footer/Twitter.webp';
+import UAE from '../../assets/Footer/UAE.webp';
+import Blur from "../../assets/Footer/Blur.webp";
+import MiniBlue from "../../assets/Footer/MiniBlue.webp";
 import { useTranslation } from 'react-i18next';
 
 export default function Footer() {

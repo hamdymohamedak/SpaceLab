@@ -13,14 +13,14 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation'; 
 
-import starsBg from '../../assets/Services/Element.png';
-import BlueBlur from '../../assets/Services/Container.png';
-import SearchEngineCardBG from '../../assets/Services/Group 5.png';
-import MarketBg from "../../assets/Services/Market.png";
-import SocialMedia from "../../assets/Services/SocialMedia.png";
-import Ecommarce from "../../assets/Services/ECommerce.png";
-import DesginBg from "../../assets/Services/Desgin.png";
-import MangementBg from "../../assets/Services/Mangement.png";
+import starsBg from '../../assets/Services/Element.webp';
+import BlueBlur from '../../assets/Services/Container.webp';
+import SearchEngineCardBG from '../../assets/Services/Group 5.webp';
+import MarketBg from "../../assets/Services/Market.webp";
+import SocialMedia from "../../assets/Services/SocialMedia.webp";
+import Ecommarce from "../../assets/Services/ECommerce.webp";
+import DesginBg from "../../assets/Services/Desgin.webp";
+import MangementBg from "../../assets/Services/Mangement.webp";
 
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
