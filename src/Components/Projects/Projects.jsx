@@ -1,7 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { ExternalLink } from 'lucide-react';
-
-// استيراد الصور
+import React, { useState } from 'react';
 import Afriqiyah from "../../assets/Projects/Afriqiyah.webp";
 import AlhakeemCo from "../../assets/Projects/AlhakeemCo.webp";
 import Birds from "../../assets/Projects/Birds.webp";
@@ -13,190 +10,157 @@ import LYpay from "../../assets/Projects/LYpay.webp";
 import Mobile from "../../assets/Projects/Mobile.webp";
 import MREIC from "../../assets/Projects/MREIC.webp";
 
-const projectImages = {
-  Afriqiyah,
-  AlhakeemCo,
-  Birds,
-  BuraqAir,
-  informatics,
-  Libyana,
-  lsGives,
-  LYpay,
-  Mobile,
-  MREIC
-};
-
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
-  const [loadedImages, setLoadedImages] = useState({});
-
-  const categories = ['All', 'Java', 'Web Design/Development', 'App Development', 'E-Commerce', 'Branding'];
 
   const projects = [
-    { imageKey: 'Mobile', title: 'Merdami', description: 'UI, UX & Web Development', category: 'Web Design/Development' },
-    { imageKey: 'BuraqAir', title: 'Buraq Air', description: 'UI, UX, Web Design/Development', category: 'Web Design/Development' },
-    { imageKey: 'AlhakeemCo', title: 'Alhakeem Co', description: 'E-Commerce, UI, UX, App Development', category: 'E-Commerce' },
-    { imageKey: 'MREIC', title: 'MREIC', description: 'UI, UX, Web Design/Development, App Development', category: 'Web Design/Development' },
-    { imageKey: 'Afriqiyah', title: 'Afriqiyah Airways', description: 'UI, UX, Web Design/Development', category: 'Web Design/Development', size: 'large'},
-    { imageKey: 'Libyana', title: 'Libyana', description: 'UI, UX, Web Design/Development', category: 'Web Design/Development', size: 'large' },
-    { imageKey: 'Birds', title: 'Birds', description: 'UI, UX, Branding', category: 'Branding' },
-    { imageKey: 'informatics', title: 'Informatics', description: 'UI, UX, Web Design/Development', category: 'Web Design/Development' },
-    { imageKey: 'lsGives', title: 'LS Gives', description: 'UI, UX, App Development', category: 'App Development' },
-    { imageKey: 'LYpay', title: 'LYpay', description: 'UI, UX, App Development', category: 'App Development' }
+    {
+      id: 1,
+      title: 'Merdami',
+      des: "UI/UX, App Development",
+      image: Mobile,
+      category: 'Mobile App',
+
+    },
+    {
+      id: 2,
+      title: 'Buraq Air',
+      des: "UI/UX, web design/development",
+      image: BuraqAir,
+      category: 'Web Development',
+
+    },
+    {
+      id: 3,
+      title: 'Alhakeem Co',
+      des: "UI/UX, web design/development, app development",
+      image: AlhakeemCo,
+      category: 'E-Commerce',
+
+    },
+    {
+      id: 4,
+      title: 'MREIC',
+      des: "UI/UX, web design/development, app development",
+      image: MREIC,
+      category: 'Web Development',
+
+    },
+    {
+      id: 5,
+      title: 'Afriqiyah Airways',
+      des: "UI/UX, web design/development",
+      image: Afriqiyah,
+      category: 'Web Development',
+
+    },
+    {
+      id: 6,
+      title: 'Libyana',
+      des: "UI/UX, web design/development",
+      image: Libyana,
+      category: 'Branding',
+
+    },
+    {
+      id: 7,
+      title: 'ls.gives',
+      des: "UI/UX, web design/development",
+      image: lsGives,
+      category: 'Branding',
+
+    },
+    {
+      id: 8,
+      title: 'LYPay Instant Payment Service',
+      des: "UI/UX, web design/development",
+      image: LYpay,
+      category: 'Branding',
+
+    },
+    {
+      id: 9,
+      title: 'Informatics Governance Forum',
+      des: "UI/UX, web design/development",
+      image: informatics,
+      category: 'Branding',
+
+    },
+    {
+      id: 10,
+      title: 'Birds',
+      des: "UI/UX, web design/development, Branding",
+      image: Birds,
+      category: 'Branding',
+
+    }
   ];
 
-  // تحميل الصور مسبقاً
-  useEffect(() => {
-    const loadImages = async () => {
-      const loaded = {};
-      for (const [key, src] of Object.entries(projectImages)) {
-        try {
-          const img = new Image();
-          img.src = src;
-          await new Promise((resolve, reject) => {
-            img.onload = resolve;
-            img.onerror = reject;
-          });
-          loaded[key] = src;
-        } catch (error) {
-          console.error(`Failed to load image: ${key}`, error);
-          loaded[key] = null;
-        }
-      }
-      setLoadedImages(loaded);
-    };
+  const filters = ['All', 'Java', 'Web Design/Development', 'App Development', 'E-Commerce', 'Branding'];
 
-    loadImages();
-  }, []);
-
-  const filteredProjects = activeFilter === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
-
-  const handleImageError = (e, imageKey) => {
-    console.error(`Error loading image: ${imageKey}`);
-    e.target.style.display = 'none';
-    e.target.parentElement.innerHTML = `
-      <div class="w-full h-full flex flex-col items-center justify-center bg-gray-800 text-white p-4">
-        <div class="text-4xl mb-2">📷</div>
-        <p class="text-center">Image not available</p>
-        <p class="text-sm text-gray-400 mt-1">${imageKey}</p>
-      </div>
-    `;
-  };
-
-  const handleImageLoad = (e, imageKey) => {
-    console.log(`Successfully loaded: ${imageKey}`);
-    e.target.style.opacity = '1';
-  };
+  const filteredProjects = activeFilter === 'All'
+    ? projects
+    : projects.filter(p => p.category.includes(activeFilter));
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen p-8">
+      <div className="relative max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-5xl font-bold text-white mb-8">PROJECTS</h1>
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold text-white mb-6">PROJECTS</h1>
 
           {/* Filter Buttons */}
           <div className="flex flex-wrap gap-3">
-            {categories.map((category) => (
+            {filters.map((filter) => (
               <button
-                key={category}
-                onClick={() => setActiveFilter(category)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeFilter === category
-                    ? 'bg-yellow-500 text-gray-900'
-                    : 'bg-gray-800 text-white hover:bg-gray-700'
-                }`}
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === filter
+                  ? 'bg-yellow-400 text-black'
+                  : 'bg-slate-800/50 text-white hover:bg-slate-700/50 border border-slate-700'
+                  }`}
               >
-                {category}
+                {filter}
               </button>
             ))}
+
+            <button className="ml-auto px-6 py-2 rounded-full text-sm font-medium bg-slate-800/50 text-white border border-slate-700 hover:bg-slate-700/50 transition-all duration-300">
+              All Filter
+            </button>
           </div>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {filteredProjects.map((project) => (
             <div
-              key={index}
-              className={`group relative overflow-hidden rounded-2xl shadow-2xl ${
-                project.size === 'large' ? 'md:col-span-2 lg:col-span-2' : ''
-              } ${
-                index === 0
-                  ? 'bg-gradient-to-br from-red-900 to-red-700'
-                  : index === 1
-                  ? 'bg-gradient-to-br from-orange-800 to-orange-600'
-                  : index === 2
-                  ? 'bg-gradient-to-br from-blue-900 to-blue-700'
-                  : index === 3
-                  ? 'bg-gradient-to-br from-gray-700 to-gray-600'
-                  : index === 4
-                  ? 'bg-gradient-to-br from-cyan-600 to-blue-500'
-                  : index === 5
-                  ? 'bg-gradient-to-br from-purple-800 to-pink-600'
-                  : index === 6
-                  ? 'bg-gradient-to-br from-green-700 to-green-500'
-                  : index === 7
-                  ? 'bg-gradient-to-br from-indigo-800 to-indigo-600'
-                  : index === 8
-                  ? 'bg-gradient-to-br from-yellow-700 to-orange-500'
-                  : 'bg-gradient-to-br from-teal-700 to-cyan-500'
-              } hover:scale-[1.02] transition-transform duration-300 cursor-pointer min-h-[400px] flex flex-col`}
+              key={project.id}
+              className="group relative rounded-2xl overflow-hidden  hover:border-yellow-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-400/10"
             >
               {/* Image Container */}
-              <div className="relative h-64 overflow-hidden bg-gray-800 flex-shrink-0">
-                {loadedImages[project.imageKey] ? (
-                  <img
-                    loading="lazy"
-                    src={loadedImages[project.imageKey]}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-0"
-                    onLoad={(e) => handleImageLoad(e, project.imageKey)}
-                    onError={(e) => handleImageError(e, project.imageKey)}
-                    style={{ transition: 'opacity 0.3s' }}
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gray-800">
-                    <div className="animate-pulse flex flex-col items-center">
-                      <div className="w-12 h-12 bg-gray-600 rounded-full mb-2"></div>
-                      <div className="w-24 h-4 bg-gray-600 rounded"></div>
-                    </div>
-                  </div>
-                )}
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                {/* لو عايز تسيب تأثير تدرج شفاف خفيف ممكن تستخدم ده */}
+                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-transparent opacity-60"></div>
               </div>
 
               {/* Content */}
-              <div className="p-6 flex-grow">
+              <div className="p-6 bg-transparent">
                 <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-                <span className="inline-block px-3 py-1 bg-black bg-opacity-30 rounded-full text-white text-xs">
-                  {project.category}
-                </span>
+                <div className="flex flex-wrap gap-2 text-white">
+                  {project.des}
+                </div>
               </div>
 
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center pointer-events-none">
-                <ExternalLink className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={40} />
-              </div>
+              <div className="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/5 transition-all duration-300 pointer-events-none"></div>
             </div>
           ))}
         </div>
 
-        {/* Loading State */}
-        {Object.keys(loadedImages).length === 0 && (
-          <div className="text-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500 mx-auto mb-4"></div>
-            <p className="text-white text-xl">Loading projects...</p>
-          </div>
-        )}
-
-        {/* No Projects Message */}
-        {filteredProjects.length === 0 && Object.keys(loadedImages).length > 0 && (
-          <div className="text-center py-12">
-            <p className="text-white text-xl">No projects found for this category.</p>
-          </div>
-        )}
       </div>
     </div>
   );
