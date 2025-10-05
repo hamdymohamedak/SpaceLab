@@ -17,7 +17,6 @@ export default function Contact() {
 
     return (
         <section className="relative w-full min-h-screen bg-[#0a0b0d] flex items-center justify-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 overflow-visible">
-            {/* النجوم */}
             <img
                 src={star}
                 alt="star"
@@ -32,11 +31,10 @@ export default function Contact() {
             <div className="max-w-full sm:max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto w-full">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                     
-                    {/* صورة الرجل */}
                     <div className="flex justify-center md:justify-end">
                         <div
                             className="relative w-full max-w-[480px] rounded-2xl overflow-hidden shadow-2xl"
-                            style={{ height: "calc(100% + 4rem)" }} // زيادة الطول 14rem
+                            style={{ height: "calc(100% + 4rem)" }} 
                         >
                             <img
                                 src={ManAtSpace}
@@ -51,11 +49,10 @@ export default function Contact() {
                         </div>
                     </div>
 
-                    {/* الفورم */}
                     <div className="flex justify-center md:justify-start">
                         <div
                             className="w-full max-w-[760px] rounded-2xl p-6 sm:p-8 bg-gradient-to-br from-white/3 to-white/6 border border-white/6 backdrop-blur-md shadow-xl flex flex-col justify-center"
-                            style={{ height: "calc(100% + 4rem)" }} // زيادة الطول 14rem
+                            style={{ height: "calc(100% + 4rem)" }} 
                         >
                             <div className="text-center">
                                 <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">
@@ -70,7 +67,6 @@ export default function Contact() {
                                 onSubmit={handleSubmit}
                                 className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-grow"
                             >
-                                {/* البريد */}
                                 <label className="flex flex-col">
                                     <span className="text-xs text-gray-300 mb-1">
                                         {t("contact.labels.email")}
@@ -90,7 +86,6 @@ export default function Contact() {
                                     </div>
                                 </label>
 
-                                {/* الاسم */}
                                 <label className="flex flex-col">
                                     <span className="text-xs text-gray-300 mb-1">
                                         {t("contact.labels.fullName")}
@@ -110,7 +105,6 @@ export default function Contact() {
                                     </div>
                                 </label>
 
-                                {/* الخدمة */}
                                 <label className="flex flex-col">
                                     <span className="text-xs text-gray-300 mb-1">
                                         {t("contact.labels.service")}
@@ -140,7 +134,6 @@ export default function Contact() {
                                     </div>
                                 </label>
 
-                                {/* الهاتف */}
                                 <label className="flex flex-col">
                                     <span className="text-xs text-gray-300 mb-1">
                                         {t("contact.labels.phone")}
@@ -159,7 +152,6 @@ export default function Contact() {
                                     </div>
                                 </label>
 
-                                {/* الزر */}
                                 <div className="sm:col-span-2">
                                     <button
                                         type="submit"

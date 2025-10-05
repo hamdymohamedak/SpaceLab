@@ -25,7 +25,6 @@
   },
   "sucessPartners": "Our Partners in sucess",
   "sucessPartnersDes": "Our journey with our partners has never been just passing projects, but a continuous path of shared achievements, where ambition meets expertise to create together a brighter digital future.",
-  
   "whyChooseUs": "Why Choose Us?",
   "designsThatDriveSales": "Designs That Drive Sales",
   "digitalSolutionsDescription": "We provide comprehensive digital solutions focused on a deep understanding of your business needs, helping you build a professional brand and create seamless user experiences in high-quality ecommerce platforms with SEO and smart marketing, ensuring your brand leaves its mark and turns ideas into measurable results.",
@@ -37,115 +36,89 @@
   "enhanceDigitalImpact": "Enhance your digital impact with SpaceLab's expertise.",
   "enhanceDigitalImpactDescription": "At SpaceLab, we empower brands with advanced digital solutions that drive engagement and growth. From impressive website design to strategic marketing, our expertise ensures you a strong online presence that attracts audiences and delivers results.",
   "startYourJourney": "Start Your Journey",
-
-  "way":"",
-  "Spacelabs":"Spacelab's",
-  "Work":"Work",
-  "Approach":"Approach",
-  "WeFollow":"We follow a well-structured, proven methodology that ensures achieving the best results at every stage of the project.",
-  "OurMethodology":"Our Methodology",
-
-
-
-
-
-
-
+  "way": "",
+  "Spacelabs": "Spacelab's",
+  "Work": "Work",
+  "Approach": "Approach",
+  "WeFollow": "We follow a well-structured, proven methodology that ensures achieving the best results at every stage of the project.",
+  "OurMethodology": "Our Methodology",
   "HappyClients": "Happy Clients",
   "YearsOfExperience": "Years of Experience",
   "ClientReviews": "Client Reviews",
   "AverageRating": "Average Rating",
-
-
-
-    "sectionLabel": "Our Services",
-    "sectionTitle": "How we turn your ideas into a stunning digital reality",
-    "sectionHighlight": "stunning digital reality",
-    "sectionDescription": "We provide a comprehensive range of design and development solutions that meet all your needs, and ensure you are getting the best planning efficiency and creativity.",
-    "cards": {
-      "marketing": {
-        "title": "Marketing & Campaign Management",
-        "description": "With our ads, you don't just sell products. You create a unique experience that touches your audience's emotions and stays in their memory forever.",
-        "button": "Start Now"
-      },
-      "seo": {
-        "title": "Search Engine Optimization – SEO",
-        "description": "Without SEO, your website is like a lost map in a maze. With our team, you'll be at the top of Google search results.",
-        "button": "Start Now"
-      },
-      "socialMedia": {
-        "title": "Social Media Management",
-        "description": "We create content that leaves a mark and tells your brand's story in a way that inspires your audience and turns engagement into lasting, genuine connections.",
-        "button": "Start Now"
-      },
-      "ecommerce": {
-        "title": "E-Commerce Store Design & Development",
-        "description": "With us, your online store becomes professional, fast, and tailored for an ideal user experience that attracts customers and boosts sales.",
-        "button": "Start Now"
-      },
-      "graphicDesign": {
-        "title": "Graphic Design & Brand Identity",
-        "description": "We design unique visual identities that reflect your uniqueness and build a strong image of your brand in the minds of your customers.",
-        "button": "Start Now"
-      },
-      "managementSystems": {
-        "title": "Management & Sales Systems",
-        "description": "We provide smart system solutions to efficiently manage your operations and sales, helping you organize your business and increase profits.",
-        "button": "Start Now"
-      }
+  "sectionLabel": "Our Services",
+  "sectionTitle": "How we turn your ideas into a stunning digital reality",
+  "sectionHighlight": "stunning digital reality",
+  "sectionDescription": "We provide a comprehensive range of design and development solutions that meet all your needs, and ensure you are getting the best planning efficiency and creativity.",
+  "cards": {
+    "marketing": {
+      "title": "Marketing & Campaign Management",
+      "description": "With our ads, you don't just sell products. You create a unique experience that touches your audience's emotions and stays in their memory forever.",
+      "button": "Start Now"
     },
-
-    "UnderstandingTheClient":"Understanding The Client",
-    "WeStartBy":"We start by carefully listening to our clients to understand their goals and analyze their needs and challenges.",
-
-    "CreativeThinking":"Creative Thinking",
-    "WeConduct":"We conduct intensive brainstorming sessions to generate innovative ideas that achieve the defined goals.",
-
-
-    "StrategicPlanning":"Strategic Planning",
-    "WeDevelop":"We develop a detailed action plan that defines the key project phases and the required resources.",
-
-    "PreciseExecution":"Precise Execution",
-    "WeImplement":"We implement the project with high accuracy, ensuring quality at every stage.",
-    "Review&Improvement":"Review & Improvement",
-    "WeContinuously":"We continuously review the work and make the necessary adjustments to ensure the best results.",
-
-    "Delivery&Follow-Up":"Delivery & Follow-Up",
-    "WeDeliver":"We deliver the final product to the client and follow up to ensure satisfaction and the achievement of goals.",
- 
-  
+    "seo": {
+      "title": "Search Engine Optimization – SEO",
+      "description": "Without SEO, your website is like a lost map in a maze. With our team, you'll be at the top of Google search results.",
+      "button": "Start Now"
+    },
+    "socialMedia": {
+      "title": "Social Media Management",
+      "description": "We create content that leaves a mark and tells your brand's story in a way that inspires your audience and turns engagement into lasting, genuine connections.",
+      "button": "Start Now"
+    },
+    "ecommerce": {
+      "title": "E-Commerce Store Design & Development",
+      "description": "With us, your online store becomes professional, fast, and tailored for an ideal user experience that attracts customers and boosts sales.",
+      "button": "Start Now"
+    },
+    "graphicDesign": {
+      "title": "Graphic Design & Brand Identity",
+      "description": "We design unique visual identities that reflect your uniqueness and build a strong image of your brand in the minds of your customers.",
+      "button": "Start Now"
+    },
+    "managementSystems": {
+      "title": "Management & Sales Systems",
+      "description": "We provide smart system solutions to efficiently manage your operations and sales, helping you organize your business and increase profits.",
+      "button": "Start Now"
+    }
+  },
+  "UnderstandingTheClient": "Understanding The Client",
+  "WeStartBy": "We start by carefully listening to our clients to understand their goals and analyze their needs and challenges.",
+  "CreativeThinking": "Creative Thinking",
+  "WeConduct": "We conduct intensive brainstorming sessions to generate innovative ideas that achieve the defined goals.",
+  "StrategicPlanning": "Strategic Planning",
+  "WeDevelop": "We develop a detailed action plan that defines the key project phases and the required resources.",
+  "PreciseExecution": "Precise Execution",
+  "WeImplement": "We implement the project with high accuracy, ensuring quality at every stage.",
+  "Review&Improvement": "Review & Improvement",
+  "WeContinuously": "We continuously review the work and make the necessary adjustments to ensure the best results.",
+  "Delivery&Follow-Up": "Delivery & Follow-Up",
+  "WeDeliver": "We deliver the final product to the client and follow up to ensure satisfaction and the achievement of goals.",
   "ContactsectionTitle": "Our Portfolio",
   "headingLine1": "A Journey of",
   "headingLine2": "Creativity & Innovation",
   "description": "Discover how we transformed ideas into inspiring projects that serve our clients and deliver tangible results.",
   "buttonText": "Our Portfolio",
-  
-  
-    "contact": {
+  "contact": {
     "sectionTitle": "Contact Us",
     "heading": "We welcome your contact",
-
     "labels": {
       "email": "Email",
       "fullName": "Full name",
       "service": "Service",
       "phone": "Phone number"
     },
-
     "placeholders": {
       "email": "Enter your email",
       "fullName": "Enter your name",
       "service": "Choose a service",
       "phone": "Enter your phone"
     },
-
     "services": {
       "web": "Web Development",
       "mobile": "Mobile Development",
       "design": "UI/UX Design"
     },
-
     "buttonText": "Send"
   }
-  
-  }
+}

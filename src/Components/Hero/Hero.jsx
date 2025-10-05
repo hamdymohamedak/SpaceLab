@@ -11,6 +11,7 @@ import Services from '../Services/Services';
 import Work from '../Work/Work';
 import Portfolio from '../Portfolio/Portfolio';
 import Contact from '../Contact/Contact';
+import Footer from '../Footer/Footer';
 
 const gradientWords = ["Solutions", "Limits", "حلول", "تجاوز", "الكون"];
 
@@ -106,6 +107,7 @@ export default function Hero() {
             <Work/>
             <Portfolio/>
             <Contact/>
+            <Footer/>
         </>
     );
 }

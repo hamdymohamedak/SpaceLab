@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -16,10 +16,15 @@ import { useTranslation } from "react-i18next";
 
 export default function Portfolio() {
     const images = [MobileImage, Draw, Analysis, DesktopScreen];
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+
+    // تحديث اتجاه الصفحة بناء على اللغة
+    useEffect(() => {
+        document.documentElement.setAttribute('dir', i18n.language === 'ar' ? 'rtl' : 'ltr');
+    }, [i18n.language]);
 
     return (
-        <section className="relative bg-black text-white py-16 px-4 overflow-hidden">
+        <section className="relative bg-black text-white py-16 px-4 overflow-hidden" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
             <div className="relative max-w-6xl mx-auto">
                 <img
                     style={{
@@ -60,6 +65,8 @@ export default function Portfolio() {
                         pagination={{ clickable: true }}
                         spaceBetween={16}
                         slidesPerView={1}
+                        dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
+                        key={i18n.language} // يعيد رسم الـ Swiper عند تغيير اللغة
                         className="rounded-3xl overflow-hidden shadow-2xl"
                     >
                         {images.map((img, i) => (
