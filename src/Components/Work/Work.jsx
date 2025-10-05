@@ -50,9 +50,9 @@ export default function Work() {
 
     return (
         <div className="relative min-h-screen bg-[#0A0A0F] overflow-hidden py-20 px-6">
-            <img style={{ position: "absolute", left: "0", top: "0", zIndex: 1 }} src={RocketBg} alt="rocketImage" />
-            <img style={{ position: "absolute", left: "0", top: "0", zIndex: 2 }} src={Blur} alt="Blur" />
-            <img style={{ position: "absolute", right: "0", top: "0", zIndex: 2 }} src={Blur2} alt="Blur2" />
+            <img loading="lazy" style={{ position: "absolute", left: "0", top: "0", zIndex: 1 }} src={RocketBg} alt="rocketImage" />
+            <img loading="lazy" style={{ position: "absolute", left: "0", top: "0", zIndex: 2 }} src={Blur} alt="Blur" />
+            <img loading="lazy" style={{ position: "absolute", right: "0", top: "0", zIndex: 2 }} src={Blur2} alt="Blur2" />
 
             <div className="relative z-10 max-w-6xl mx-auto">
                 <div className="text-center mb-16">

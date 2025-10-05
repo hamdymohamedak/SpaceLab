@@ -18,18 +18,20 @@ export default function Contact() {
     return (
         <section className="relative w-full min-h-screen bg-[#0A0A0F] flex flex-col md:flex-row items-center justify-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 overflow-visible">
 
-            <img src={star} alt="star" className="absolute w-30 top-10 left-10 opacity-80" />
+            <img loading="lazy" src={star} alt="star" className="absolute w-30 top-10 left-10 opacity-80" />
 
             <div className="max-w-full sm:max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto w-full flex flex-col md:flex-row gap-6">
 
                 <div className="flex justify-center md:justify-end w-full md:w-1/2 relative">
                     <div className="relative w-full max-w-[480px] rounded-2xl overflow-hidden shadow-2xl md:h-[calc(100%+4rem-150px)]">
                         <img
+                            loading="lazy"
                             src={ManAtSpace}
                             alt="Man at space"
                             className="w-full h-full object-cover"
                         />
                         <img
+                        loading="lazy"
                             src={BlurAtManAtSpace}
                             alt="Blur effect"
                             className="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none"

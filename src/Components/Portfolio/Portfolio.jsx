@@ -27,6 +27,7 @@ export default function Portfolio() {
         <section className="relative bg-black text-white py-16 px-4 overflow-hidden" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
             <div className="relative max-w-6xl mx-auto">
                 <img
+                    loading="lazy"
                     style={{
                         position: "absolute",
                         right: "20%",

@@ -29,7 +29,6 @@ function App() {
           element={
             <>
               <Hero />
-
             </>
           }
         />
@@ -37,7 +36,7 @@ function App() {
         <Route path="/contact" element={<><Contact /><Footer /></>} />
         <Route path="*" element={<div className="text-white text-center p-8">404 - Page Not Found</div>} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 }

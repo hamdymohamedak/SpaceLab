@@ -40,12 +40,14 @@ export default function Footer() {
     return (
         <footer className="bg-[#0A0A0F] text-white py-8 px-8 relative">
             <img
+                loading="lazy"
                 src={MiniBlue}
                 alt="Mini Blue"
                 className="absolute left-0 w-[400px] h-[200px] object-contain z-10 pointer-events-none"
             />
 
             <img
+                loading="lazy"
                 src={Blur}
                 alt="Blur"
                 className="absolute right-0 w-[1000px] h-[200px] opacity-50 object-contain z-0 pointer-events-none"
@@ -66,16 +68,16 @@ export default function Footer() {
                         </p>
                         <div className="flex gap-3">
                             <a href="#" className="hover:opacity-80 transition-opacity">
-                                <img src={Linkedin} alt={t('socialMedia.linkedin')} className="w-5 h-5" />
+                                <img loading="lazy" src={Linkedin} alt={t('socialMedia.linkedin')} className="w-5 h-5" />
                             </a>
                             <a href="#" className="hover:opacity-80 transition-opacity">
-                                <img src={instagram} alt={t('socialMedia.instagram')} className="w-5 h-5" />
+                                <img loading="lazy" src={instagram} alt={t('socialMedia.instagram')} className="w-5 h-5" />
                             </a>
                             <a href="#" className="hover:opacity-80 transition-opacity">
-                                <img src={Twitter} alt={t('socialMedia.twitter')} className="w-5 h-5" />
+                                <img loading="lazy" src={Twitter} alt={t('socialMedia.twitter')} className="w-5 h-5" />
                             </a>
                             <a href="#" className="hover:opacity-80 transition-opacity">
-                                <img src={FaceBook} alt={t('socialMedia.facebook')} className="w-5 h-5" />
+                                <img loading="lazy" src={FaceBook} alt={t('socialMedia.facebook')} className="w-5 h-5" />
                             </a>
                         </div>
                     </div>
@@ -139,6 +141,7 @@ export default function Footer() {
                             <p className="text-xs text-white font-bold">{t('serviceLocations.title')}</p>
                             {['SudiArabia', 'UAE', 'Egypt', 'kewit', 'Bahrin', 'Oman', 'Qatar', 'Turkey', 'Sudan'].map((country, idx) => (
                                 <img
+                                    loading="lazy"
                                     key={idx}
                                     src={countryMap[country]}
                                     alt={t(`serviceLocations.countries.${idx}`)}

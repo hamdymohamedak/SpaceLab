@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Globe, Phone, Menu, X, Languages } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
@@ -8,7 +9,7 @@ export default function Header() {
   const [language, setLanguage] = useState(i18n.language || "ar");
 
   const navLinks = [
-    { label: t("nav.home"), href: "#" },
+    { label: t("nav.home"), href: "/" },
     { label: t("nav.partners"), href: "#" },
     { label: t("nav.about"), href: "#" },
     { label: t("nav.services"), href: "#" },
@@ -91,14 +92,14 @@ export default function Header() {
           <div className="lg:hidden mt-4 pb-4 border-t border-gray-800/50 pt-4">
             <nav className="flex flex-col space-y-3">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="text-sm text-white hover:text-white hover:bg-purple-500/10 px-4 py-2 rounded-lg transition-all duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
 

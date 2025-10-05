@@ -148,6 +148,7 @@ export default function Projects() {
               <div className="relative h-64 overflow-hidden bg-gray-800 flex-shrink-0">
                 {loadedImages[project.imageKey] ? (
                   <img
+                    loading="lazy"
                     src={loadedImages[project.imageKey]}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-0"

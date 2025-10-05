@@ -12,7 +12,6 @@ import Services from "../Services/Services";
 import Work from "../Work/Work";
 import Portfolio from "../Portfolio/Portfolio";
 import Contact from "../Contact/Contact";
-import Footer from "../Footer/Footer";
 
 const gradientWords = ["Solutions", "Limits", "حلول", "تجاوز", "الكون"];
 
@@ -65,27 +64,32 @@ export default function Hero() {
         </div>
 
         <img
+          loading="lazy"
           src={rocks}
           alt="floating rocks"
           className="hidden sm:block absolute left-0 top-[10%] w-[45%] max-w-[600px] opacity-60 object-contain animate-float"
         />
         <img
+          loading="lazy"
           src={rocks}
           alt="floating rocks"
           className="hidden sm:block absolute right-0 bottom-[15%] w-[35%] max-w-[500px] opacity-50 object-contain animate-float-delayed"
         />
         <img
+          loading="lazy"
           src={planet}
           alt="planet"
           className="hidden sm:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[400px] md:h-[600px] lg:h-[800px] opacity-80 object-cover"
         />
         <img
+          loading="lazy"
           src={BlueBlur}
           alt="BlueBlur"
           style={{ opacity: "0.4" }}
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-screen opacity-80 object-cover"
         />
         <img
+          loading="lazy"
           src={BlueBlur}
           alt="BlueBlur"
           className="absolute right-[15%] top-[15%] w-16 h-16 md:w-24 md:h-24 opacity-70 animate-float"
