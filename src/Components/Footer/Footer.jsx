@@ -13,6 +13,8 @@ import SudiArabia from '../../assets/Footer/SudiArabia.png';
 import Turkey from '../../assets/Footer/Turkey.png';
 import Twitter from '../../assets/Footer/Twitter.png';
 import UAE from '../../assets/Footer/UAE.png';
+import Blur from "../../assets/Footer/Blur.png";
+import MiniBlue from "../../assets/Footer/MiniBlue.png";
 
 export default function Footer() {
     let [Year, setYear] = useState();
@@ -24,8 +26,35 @@ export default function Footer() {
     }, []);
 
     return (
-        <footer className="bg-[#0a0118] text-white py-12 px-8">
-            <div className="max-w-7xl mx-auto">
+        <footer className="bg-slate-950 text-white py-12 px-8 relative overflow-hidden">
+            {/* <img
+                src={MiniBlue}
+                alt="Mini Blue"
+                style={{
+                    position: "absolute",
+                    left: 0,
+                    bottom: 0,
+                    width: "600px",
+                    height: "600px",
+                    zIndex: 1,
+                    objectFit: "contain",
+                }}
+            />
+            <img
+                src={Blur}
+                alt="Blur"
+                style={{
+                    position: "absolute",
+                    right: 0,
+                    bottom: 0,
+                    width: "600px",
+                    height: "600px",
+                    zIndex: 0,
+                    objectFit: "contain",
+                }}
+            /> */}
+
+            <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
                     <div className="md:col-span-1">
                         <h1 className="text-2xl font-bold mb-4">
