@@ -47,7 +47,7 @@ function GradientText({ text }) {
 export default function Hero() {
   const { t } = useTranslation();
 
-  // observers لكل سكشن
+ 
   const { ref: partnersRef, inView: partnersInView } = useInView({ triggerOnce: true, rootMargin: "200px" });
   const { ref: whyRef, inView: whyInView } = useInView({ triggerOnce: true, rootMargin: "200px" });
   const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: true, rootMargin: "200px" });
@@ -58,9 +58,9 @@ export default function Hero() {
 
   return (
     <>
-      {/* HERO SECTION */}
+      
       <div className={styles["hero-section"]}>
-        {/* النجوم */}
+        
         <div className="absolute inset-0">
           {[...Array(100)].map((_, i) => (
             <div
@@ -79,7 +79,7 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* الصخور والكواكب */}
+        
         <img
           src={rocks}
           alt="floating rocks"
@@ -113,16 +113,16 @@ export default function Hero() {
           className={`${styles["blue-blur-small"]} ${styles.float}`}
         />
 
-        {/* النص والأزرار */}
+     
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 md:px-8 text-center">
-          {/* البادج */}
+          
           <div className={`${styles.badge} mb-6 sm:mb-12`}>
             <div className="px-4 py-2 border border-yellow-500 rounded-full backdrop-blur-sm bg-white/5 sm:bg-white/10">
               <p className="text-white/80 text-xs sm:text-sm tracking-wider">{t("badge")}</p>
             </div>
           </div>
 
-          {/* العنوان */}
+         
           <div className={`${styles.title} mb-12 max-w-full sm:max-w-[90%] md:max-w-[838px]`}>
             <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold leading-snug sm:leading-tight break-words">
               <GradientText text={t("heading.line1")} />
@@ -131,7 +131,7 @@ export default function Hero() {
             </h1>
           </div>
 
-          {/* الأزرار */}
+     
           <div className={`${styles.buttons} flex gap-4 justify-center w-full max-w-sm`}>
             <button
               className={`${styles["button-hover"]} px-6 py-3 bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] rounded-full text-white font-medium text-sm sm:text-base flex items-center gap-2`}
@@ -150,7 +150,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* باقي السكاشن بظهور متحرك */}
+  
       <div
         ref={partnersRef}
         className={`${styles["fade-in-up"]} ${partnersInView ? styles.visible : ""}`}
