@@ -249,4 +249,32 @@
   .planet-img {
     height: 800px;
   }
+}/* Hero.module.css */
+.rocks-img {
+  position: absolute;
+  width: 150px; /* Adjust size as needed */
+}
+
+.left {
+  left: 5%;
+  top: 10%;
+}
+
+.right {
+  right: 5%;
+  top: 20%;
+}
+
+@media (max-width: 640px) {
+  .rocks-img {
+    width: 100px; /* Smaller size for mobile */
+  }
+  .left {
+    left: 2%;
+    top: 5%;
+  }
+  .right {
+    right: 2%;
+    top: 15%;
+  }
 }

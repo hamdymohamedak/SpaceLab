@@ -29,12 +29,12 @@ export default function Header() {
     <header className={`${styles.header} w-full bg-[#0a0a1a] text-white border-b border-gray-800/50`} dir="ltr">
       <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="hidden lg:flex items-center justify-between">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="text-2xl font-bold bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] bg-clip-text text-transparent transition-all duration-300 delay-150 hover:text-opacity-90"
           >
             {t("logo")}
-          </a>
+          </Link>
 
           <nav className="flex items-center space-x-8">
             {navLinks.map((link) => (

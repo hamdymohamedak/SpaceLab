@@ -13,6 +13,7 @@ import DesktopScreen from "../../assets/Portfolio/DeskTopScreen.webp";
 import Light from "../../assets/Portfolio/Light.webp";
 import styles from "./Portfolio.module.css";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export default function Portfolio() {
     const images = [MobileImage, Draw, Analysis, DesktopScreen];
@@ -58,6 +59,7 @@ export default function Portfolio() {
                     style={{
                         position: "absolute",
                         right: "20%",
+                        zIndex: "-1"
                     }}
                     src={Light}
                     alt="Light"
@@ -81,7 +83,7 @@ export default function Portfolio() {
                         </p>
 
                         <button className="group flex items-center gap-3 px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-                            <span className="text-sm">{t("buttonText")}</span>
+                            <Link to={"/projects"} className="text-sm">{t("buttonText")}</Link>
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>
                     </div>
@@ -149,7 +151,7 @@ export default function Portfolio() {
                             </p>
 
                             <button className="group flex items-center gap-3 px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-                                <span className="text-sm">{t("buttonText")}</span>
+                                <Link to={"/projects"} className="text-sm">{t("buttonText")}</Link>
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </button>
                         </div>

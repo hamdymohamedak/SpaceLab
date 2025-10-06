@@ -47,7 +47,6 @@ function GradientText({ text }) {
 export default function Hero() {
   const { t } = useTranslation();
 
- 
   const { ref: partnersRef, inView: partnersInView } = useInView({ triggerOnce: true, rootMargin: "200px" });
   const { ref: whyRef, inView: whyInView } = useInView({ triggerOnce: true, rootMargin: "200px" });
   const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: true, rootMargin: "200px" });
@@ -58,9 +57,7 @@ export default function Hero() {
 
   return (
     <>
-      
       <div className={styles["hero-section"]}>
-        
         <div className="absolute inset-0">
           {[...Array(100)].map((_, i) => (
             <div
@@ -79,18 +76,17 @@ export default function Hero() {
           ))}
         </div>
 
-        
         <img
           src={rocks}
           alt="floating rocks"
           loading="lazy"
-          className={`${styles["rocks-img"]} ${styles["left"]} ${styles.float} hidden sm:block`}
+          className={`${styles["rocks-img"]} ${styles["left"]} ${styles.float}`}
         />
         <img
           src={rocks}
           alt="floating rocks"
           loading="lazy"
-          className={`${styles["rocks-img"]} ${styles["right"]} ${styles["float-delayed"]} hidden sm:block`}
+          className={`${styles["rocks-img"]} ${styles["right"]} ${styles["float-delayed"]}`}
         />
         <img
           src={planet}
@@ -113,25 +109,21 @@ export default function Hero() {
           className={`${styles["blue-blur-small"]} ${styles.float}`}
         />
 
-     
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 md:px-8 text-center">
-          
           <div className={`${styles.badge} mb-6 sm:mb-12`}>
             <div className="px-4 py-2 border border-yellow-500 rounded-full backdrop-blur-sm bg-white/5 sm:bg-white/10">
               <p className="text-white/80 text-xs sm:text-sm tracking-wider">{t("badge")}</p>
             </div>
           </div>
 
-         
           <div className={`${styles.title} mb-12 max-w-full sm:max-w-[90%] md:max-w-[838px]`}>
-            <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold leading-snug sm:leading-tight break-words">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-snug sm:leading-tight break-words">
               <GradientText text={t("heading.line1")} />
               <br className="sm:hidden" />
               <GradientText text={t("heading.line2")} />
             </h1>
           </div>
 
-     
           <div className={`${styles.buttons} flex gap-4 justify-center w-full max-w-sm`}>
             <button
               className={`${styles["button-hover"]} px-6 py-3 bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] rounded-full text-white font-medium text-sm sm:text-base flex items-center gap-2`}
@@ -150,7 +142,6 @@ export default function Hero() {
         </div>
       </div>
 
-  
       <div
         ref={partnersRef}
         className={`${styles["fade-in-up"]} ${partnersInView ? styles.visible : ""}`}
