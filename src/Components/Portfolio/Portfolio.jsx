@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -11,21 +11,48 @@ import Draw from "../../assets/Portfolio/Draw.webp";
 import Analysis from "../../assets/Portfolio/Analysis.webp";
 import DesktopScreen from "../../assets/Portfolio/DeskTopScreen.webp";
 import Light from "../../assets/Portfolio/Light.webp";
-
+import styles from "./Portfolio.module.css";
 import { useTranslation } from "react-i18next";
 
 export default function Portfolio() {
     const images = [MobileImage, Draw, Analysis, DesktopScreen];
     const { t, i18n } = useTranslation();
+    const desktopContentRef = useRef(null); // For parent div in desktop
+    const mobileContentRef = useRef(null); // For parent div in mobile
 
-    
     useEffect(() => {
         document.documentElement.setAttribute('dir', i18n.language === 'ar' ? 'rtl' : 'ltr');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(styles.card);
+                    entry.target.classList.remove(styles.noAnimation);
+                } else {
+                    entry.target.classList.remove(styles.card);
+                    entry.target.classList.add(styles.noAnimation);
+                }
+            });
+        }, observerOptions);
+
+        if (desktopContentRef.current) observer.observe(desktopContentRef.current);
+        if (mobileContentRef.current) observer.observe(mobileContentRef.current);
+
+        return () => {
+            if (desktopContentRef.current) observer.unobserve(desktopContentRef.current);
+            if (mobileContentRef.current) observer.unobserve(mobileContentRef.current);
+        };
     }, [i18n.language]);
 
     return (
-        <section className="relative bg-black text-white py-16 px-4 overflow-hidden" dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
-            <div className="relative max-w-6xl mx-auto">
+        <section className={`relative bg-black text-white py-16 px-4 overflow-hidden ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`} dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
+            <div ref={desktopContentRef} className={`relative max-w-6xl mx-auto ${styles.noAnimation}`}>
                 <img
                     loading="lazy"
                     style={{
@@ -36,10 +63,8 @@ export default function Portfolio() {
                     alt="Light"
                 />
 
-         
-                <div className="lg:hidden space-y-10">
+                <div ref={mobileContentRef} className={`${styles.noAnimation} lg:hidden space-y-10`}>
                     <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6">
-
                         <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-200 border-b-2 border-yellow-400 pb-1">
                             {t("ContactsectionTitle")}
                         </h3>

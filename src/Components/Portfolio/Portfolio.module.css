@@ -1,0 +1,20 @@
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.card {
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+.no-animation {
+  animation: none !important;
+  transform: translateX(0);
+  opacity: 1;
+}
