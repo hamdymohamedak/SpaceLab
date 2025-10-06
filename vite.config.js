@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import { visualizer } from 'rollup-plugin-visualizer'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react({
@@ -11,9 +11,13 @@ export default defineConfig({
       },
     }),
     tailwindcss(),
+    visualizer({           
+      open: true,        
+      filename: 'stats.html'
+    }),
   ],
   build: {
-    minify: 'esbuild',  
-    sourcemap: true      
+    minify: 'esbuild',
+    sourcemap: true,
   },
 })
