@@ -12,4 +12,8 @@ export default defineConfig({
     }),
     tailwindcss(),
   ],
+  build: {
+    minify: 'esbuild',  
+    sourcemap: true      
+  },
 })
