@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Globe, Phone, Menu, X, Languages } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import styles from "./Header.module.css";
 
 export default function Header() {
   const { t, i18n } = useTranslation();
@@ -25,7 +26,7 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-[#0a0a1a] text-white border-b border-gray-800/50" dir="ltr">
+    <header className={`${styles.header} w-full bg-[#0a0a1a] text-white border-b border-gray-800/50`} dir="ltr">
       <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="hidden lg:flex items-center justify-between">
           <a
@@ -89,7 +90,21 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-gray-800/50 pt-4">
+          <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''} lg:hidden`}>
+            <div className="flex justify-between items-center mb-6">
+              <a
+                href="#"
+                className="text-xl font-bold bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] bg-clip-text text-transparent"
+              >
+                {t("logo")}
+              </a>
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="focus:outline-none p-2 hover:bg-purple-500/10 rounded-lg transition-colors"
+              >
+                <X size={24} stroke="#a855f7" />
+              </button>
+            </div>
             <nav className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <Link
@@ -103,7 +118,7 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="mt-4 px-4">
+            <div className="mt-4">
               <button
                 onClick={toggleLanguage}
                 className="flex items-center gap-2 bg-[#2a2a3a] text-white rounded-full px-4 py-2 hover:bg-[#3a3a4a] transition-colors duration-200 w-full"

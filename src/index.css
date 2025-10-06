@@ -14,7 +14,8 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  font-display: swap
+  font-display: swap;
+  /* overflow-y: visible; */
 }
 
 @media (max-width: 320px) {

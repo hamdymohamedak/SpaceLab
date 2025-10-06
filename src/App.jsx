@@ -11,7 +11,6 @@ function App() {
   const { i18n } = useTranslation();
   const language = i18n.language || "ar";
 
-  // Function will be used at production to TurnOff the test Logs
   TurnOffLogs();
 
   return (
@@ -27,7 +26,7 @@ function App() {
           }
         />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<><Contact /><Footer /></>} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<div className="text-white text-center p-8">404 - Page Not Found</div>} />
       </Routes>
       <Footer />
