@@ -18,7 +18,7 @@ export default function Portfolio() {
     const images = [MobileImage, Draw, Analysis, DesktopScreen];
     const { t, i18n } = useTranslation();
 
-    // تحديث اتجاه الصفحة بناء على اللغة
+    
     useEffect(() => {
         document.documentElement.setAttribute('dir', i18n.language === 'ar' ? 'rtl' : 'ltr');
     }, [i18n.language]);
@@ -33,7 +33,7 @@ export default function Portfolio() {
                         right: "20%",
                     }}
                     src={Light}
-                    alt=""
+                    alt="Light"
                 />
 
          
@@ -67,7 +67,7 @@ export default function Portfolio() {
                         spaceBetween={16}
                         slidesPerView={1}
                         dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
-                        key={i18n.language} // يعيد رسم الـ Swiper عند تغيير اللغة
+                        key={i18n.language}
                         className="rounded-3xl overflow-hidden shadow-2xl"
                     >
                         {images.map((img, i) => (

@@ -239,7 +239,7 @@ function ServiceCard({
             {backgroundImage && (
                 <img
                     src={backgroundImage}
-                    alt=""
+                    alt="img"
                     style={backgroundImageStyle}
                 />
             )}

@@ -45,7 +45,7 @@ function GradientText({ text }) {
 export default function Hero() {
   const { t } = useTranslation();
 
-  
+  // observers لكل سكشن
   const { ref: partnersRef, inView: partnersInView } = useInView({ triggerOnce: true, rootMargin: "200px" });
   const { ref: whyRef, inView: whyInView } = useInView({ triggerOnce: true, rootMargin: "200px" });
   const { ref: statsRef, inView: statsInView } = useInView({ triggerOnce: true, rootMargin: "200px" });
@@ -56,7 +56,7 @@ export default function Hero() {
 
   return (
     <>
-  
+      {/* HERO SECTION */}
       <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-[#0a0a1f] via-[#151532] to-[#1a1a3e]">
         <div className="absolute inset-0">
           {[...Array(100)].map((_, i) => (
@@ -116,34 +116,69 @@ export default function Hero() {
         </div>
       </div>
 
-     
-      <Suspense fallback={<div className="text-white text-center">Loading partners...</div>}>
-        <Partners />
-      </Suspense>
 
-      <Suspense fallback={<div className="text-white text-center">Loading why choose us...</div>}>
-        <WhyChooseUs />
-      </Suspense>
+      <div ref={partnersRef}>
+        {partnersInView && (
+          <Suspense fallback={<div className="text-white text-center">Loading partners...</div>}>
+            <Partners />
+          </Suspense>
+        )}
+      </div>
 
-      <Suspense fallback={<div className="text-white text-center">Loading stats...</div>}>
-        <Stats />
-      </Suspense>
 
-      <Suspense fallback={<div className="text-white text-center">Loading services...</div>}>
-        <Services />
-      </Suspense>
+      <div ref={whyRef}>
+        {whyInView && (
+          <Suspense fallback={<div className="text-white text-center">Loading why choose us...</div>}>
+            <WhyChooseUs />
+          </Suspense>
+        )}
+      </div>
 
-      <Suspense fallback={<div className="text-white text-center">Loading work...</div>}>
-        <Work />
-      </Suspense>
 
-      <Suspense fallback={<div className="text-white text-center">Loading portfolio...</div>}>
-        <Portfolio />
-      </Suspense>
+      <div ref={statsRef}>
+        {statsInView && (
+          <Suspense fallback={<div className="text-white text-center">Loading stats...</div>}>
+            <Stats />
+          </Suspense>
+        )}
+      </div>
 
-      <Suspense fallback={<div className="text-white text-center">Loading contact...</div>}>
-        <Contact />
-      </Suspense>
+
+      <div ref={servicesRef}>
+        {servicesInView && (
+          <Suspense fallback={<div className="text-white text-center">Loading services...</div>}>
+            <Services />
+          </Suspense>
+        )}
+      </div>
+
+
+      <div ref={workRef}>
+        {workInView && (
+          <Suspense fallback={<div className="text-white text-center">Loading work...</div>}>
+            <Work />
+          </Suspense>
+        )}
+      </div>
+
+
+      <div ref={portfolioRef}>
+        {portfolioInView && (
+          <Suspense fallback={<div className="text-white text-center">Loading portfolio...</div>}>
+            <Portfolio />
+          </Suspense>
+        )}
+      </div>
+
+
+      <div ref={contactRef}>
+        {contactInView && (
+          <Suspense fallback={<div className="text-white text-center">Loading contact...</div>}>
+            <Contact />
+          </Suspense>
+        )}
+      </div>
+
 
     </>
   );
