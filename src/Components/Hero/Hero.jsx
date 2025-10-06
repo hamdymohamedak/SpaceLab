@@ -111,8 +111,8 @@ export default function Hero() {
 
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 md:px-8 text-center">
           <div className={`${styles.badge} mb-6 sm:mb-12`}>
-            <div className="px-4 py-2 border border-yellow-500 rounded-full backdrop-blur-sm bg-white/5 sm:bg-white/10">
-              <p className="text-white/80 text-xs sm:text-sm tracking-wider">{t("badge")}</p>
+            <div className="px-5 py-2.5 border border-yellow-500 rounded-full backdrop-blur-sm bg-white/5 sm:bg-white/10">
+              <p className="text-sm sm:text-sm tracking-wider text-white/80">{t("badge")}</p>
             </div>
           </div>
 
