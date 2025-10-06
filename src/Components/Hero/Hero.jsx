@@ -11,7 +11,7 @@ import Loader from "../Loader/Loader";
 import styles from "./Hero.module.css";
 
 const Partners = lazy(() => import("../Partners/Partners"));
-const WhyChooseUs = lazy(() => import("../WhyShooseUs/WhyShooseUs"));
+const WhyChooseUs = lazy(() => import("../WhyShooseUs/WhyChooseUs"));
 const Stats = lazy(() => import("../Stats/Stats"));
 const Services = lazy(() => import("../Services/Services"));
 const Work = lazy(() => import("../Work/Work"));
