@@ -1,13 +1,42 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Send, Mail, User, Phone, Briefcase, ChevronDown } from "lucide-react";
 import ManAtSpace from "../../assets/Contact/ManAtSpace.webp";
 import BlurAtManAtSpace from "../../assets/Contact/Blur.webp";
 import star from "../../assets/Contact/Star.webp";
-// import bottomStar from "../../assets/Contact/BottomStar.png";
 import { useTranslation } from "react-i18next";
+import styles from "./Contact.module.css";
 
 export default function Contact() {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const contentSectionRef = useRef(null); // For parent div in desktop and mobile
+
+    useEffect(() => {
+        document.documentElement.setAttribute('dir', i18n.language === 'ar' ? 'rtl' : 'ltr');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(styles.card);
+                    entry.target.classList.remove(styles.noAnimation);
+                } else {
+                    entry.target.classList.remove(styles.card);
+                    entry.target.classList.add(styles.noAnimation);
+                }
+            });
+        }, observerOptions);
+
+        if (contentSectionRef.current) observer.observe(contentSectionRef.current);
+
+        return () => {
+            if (contentSectionRef.current) observer.unobserve(contentSectionRef.current);
+        };
+    }, [i18n.language]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,12 +45,10 @@ export default function Contact() {
     };
 
     return (
-        <section className="relative w-full min-h-screen bg-[#0A0A0F] flex flex-col md:flex-row items-center justify-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 overflow-visible">
-
+        <section className={`relative w-full min-h-screen bg-[#0A0A0F] flex flex-col md:flex-row items-center justify-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 overflow-visible ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`} dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
             <img loading="lazy" src={star} alt="star" className="absolute w-30 top-10 left-10 opacity-80" />
 
-            <div className="max-w-full sm:max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto w-full flex flex-col md:flex-row gap-6">
-
+            <div ref={contentSectionRef} className={`max-w-full sm:max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto w-full flex flex-col md:flex-row gap-6 ${styles.noAnimation}`}>
                 <div className="flex justify-center md:justify-end w-full md:w-1/2 relative">
                     <div className="relative w-full max-w-[480px] rounded-2xl overflow-hidden shadow-2xl md:h-[calc(100%+4rem-150px)]">
                         <img
@@ -31,7 +58,7 @@ export default function Contact() {
                             className="w-full h-full object-cover"
                         />
                         <img
-                        loading="lazy"
+                            loading="lazy"
                             src={BlurAtManAtSpace}
                             alt="Blur effect"
                             className="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none"
@@ -51,7 +78,6 @@ export default function Contact() {
                         </div>
 
                         <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-grow">
-
                             <label className="flex flex-col">
                                 <span className="text-xs text-gray-300 mb-1">{t("contact.labels.email")}</span>
                                 <div className="relative">
@@ -66,7 +92,6 @@ export default function Contact() {
                                 </div>
                             </label>
 
-
                             <label className="flex flex-col">
                                 <span className="text-xs text-gray-300 mb-1">{t("contact.labels.fullName")}</span>
                                 <div className="relative">
@@ -80,7 +105,6 @@ export default function Contact() {
                                     />
                                 </div>
                             </label>
-
 
                             <label className="flex flex-col">
                                 <span className="text-xs text-gray-300 mb-1">{t("contact.labels.service")}</span>
@@ -101,7 +125,6 @@ export default function Contact() {
                                 </div>
                             </label>
 
-
                             <label className="flex flex-col">
                                 <span className="text-xs text-gray-300 mb-1">{t("contact.labels.phone")}</span>
                                 <div className="relative">
@@ -114,7 +137,6 @@ export default function Contact() {
                                     />
                                 </div>
                             </label>
-
 
                             <div className="sm:col-span-2">
                                 <button
