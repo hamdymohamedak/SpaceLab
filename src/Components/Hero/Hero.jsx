@@ -7,6 +7,8 @@ import { useInView } from "react-intersection-observer";
 import planet from "../../assets/Hero/planet.webp";
 import rocks from "../../assets/Hero/Rocks.webp";
 import BlueBlur from "../../assets/Hero/Blueblur.webp";
+import Loader from "../Loader/Loader";
+import styles from "./Hero.module.css";
 
 const Partners = lazy(() => import("../Partners/Partners"));
 const WhyChooseUs = lazy(() => import("../WhyShooseUs/WhyShooseUs"));
@@ -57,12 +59,13 @@ export default function Hero() {
   return (
     <>
       {/* HERO SECTION */}
-      <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-[#0a0a1f] via-[#151532] to-[#1a1a3e]">
+      <div className={styles["hero-section"]}>
+        {/* النجوم */}
         <div className="absolute inset-0">
           {[...Array(100)].map((_, i) => (
             <div
               key={i}
-              className="absolute bg-white rounded-full animate-pulse"
+              className={`${styles.star} absolute bg-white rounded-full`}
               style={{
                 width: Math.random() * 2 + 1 + "px",
                 height: Math.random() * 2 + 1 + "px",
@@ -76,25 +79,51 @@ export default function Hero() {
           ))}
         </div>
 
-        <img src={rocks} alt="floating rocks" loading="lazy"
-          className="hidden sm:block absolute left-0 top-[10%] w-[45%] max-w-[600px] opacity-60 object-contain animate-float" />
-        <img src={rocks} alt="floating rocks" loading="lazy"
-          className="hidden sm:block absolute right-0 bottom-[15%] w-[35%] max-w-[500px] opacity-50 object-contain animate-float-delayed" />
-        <img src={planet} alt="planet" fetchPriority="high" width="800" height="800"
-          className="hidden sm:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[400px] md:h-[600px] lg:h-[800px] opacity-80 object-cover" />
-        <img src={BlueBlur} alt="BlueBlur" loading="lazy"
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-screen opacity-40 object-cover" />
-        <img src={BlueBlur} alt="BlueBlur" loading="lazy"
-          className="absolute right-[15%] top-[15%] w-16 h-16 md:w-24 md:h-24 opacity-70 animate-float" />
+        {/* الصخور والكواكب */}
+        <img
+          src={rocks}
+          alt="floating rocks"
+          loading="lazy"
+          className={`${styles["rocks-img"]} ${styles["left"]} ${styles.float} hidden sm:block`}
+        />
+        <img
+          src={rocks}
+          alt="floating rocks"
+          loading="lazy"
+          className={`${styles["rocks-img"]} ${styles["right"]} ${styles["float-delayed"]} hidden sm:block`}
+        />
+        <img
+          src={planet}
+          alt="planet"
+          fetchPriority="high"
+          width="800"
+          height="800"
+          className={`${styles["planet-img"]} hidden sm:block`}
+        />
+        <img
+          src={BlueBlur}
+          alt="BlueBlur"
+          loading="lazy"
+          className={`${styles["blue-blur-img"]}`}
+        />
+        <img
+          src={BlueBlur}
+          alt="BlueBlur"
+          loading="lazy"
+          className={`${styles["blue-blur-small"]} ${styles.float}`}
+        />
 
+        {/* النص والأزرار */}
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 md:px-8 text-center">
-          <div className="mb-6 sm:mb-12">
+          {/* البادج */}
+          <div className={`${styles.badge} mb-6 sm:mb-12`}>
             <div className="px-4 py-2 border border-yellow-500 rounded-full backdrop-blur-sm bg-white/5 sm:bg-white/10">
               <p className="text-white/80 text-xs sm:text-sm tracking-wider">{t("badge")}</p>
             </div>
           </div>
 
-          <div className="mb-12 max-w-full sm:max-w-[90%] md:max-w-[838px]">
+          {/* العنوان */}
+          <div className={`${styles.title} mb-12 max-w-full sm:max-w-[90%] md:max-w-[838px]`}>
             <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold leading-snug sm:leading-tight break-words">
               <GradientText text={t("heading.line1")} />
               <br className="sm:hidden" />
@@ -102,13 +131,18 @@ export default function Hero() {
             </h1>
           </div>
 
-          <div className="flex gap-4 justify-center w-full max-w-sm">
-            <button className="group px-6 py-3 bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] rounded-full text-white font-medium text-sm sm:text-base flex items-center gap-2 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 delay-150 hover:scale-105">
+          {/* الأزرار */}
+          <div className={`${styles.buttons} flex gap-4 justify-center w-full max-w-sm`}>
+            <button
+              className={`${styles["button-hover"]} px-6 py-3 bg-gradient-to-r from-[#8E2DE2] via-[#8E2DE2]/80 to-[#F5A623] rounded-full text-white font-medium text-sm sm:text-base flex items-center gap-2`}
+            >
               <span>{t("Herobuttons.contact")}</span>
               <Phone className="w-5 h-5" />
             </button>
-            <Link to="/projects"
-              className="group px-6 py-3 bg-transparent border border-yellow-500 rounded-full text-white font-bold text-sm sm:text-base flex items-center gap-2 hover:bg-yellow-500 hover:text-white hover:shadow-lg hover:shadow-red-500/50 transition-all hover:scale-105">
+            <Link
+              to="/projects"
+              className={`${styles["button-hover"]} px-6 py-3 bg-transparent border border-yellow-500 rounded-full text-white font-bold text-sm sm:text-base flex items-center gap-2`}
+            >
               <span>{t("Herobuttons.portfolio")}</span>
               <FolderArchive className="w-5 h-5" />
             </Link>
@@ -116,70 +150,83 @@ export default function Hero() {
         </div>
       </div>
 
-
-      <div ref={partnersRef}>
+      {/* باقي السكاشن بظهور متحرك */}
+      <div
+        ref={partnersRef}
+        className={`${styles["fade-in-up"]} ${partnersInView ? styles.visible : ""}`}
+      >
         {partnersInView && (
-          <Suspense fallback={<div className="text-white text-center">Loading partners...</div>}>
+          <Suspense fallback={<Loader />}>
             <Partners />
           </Suspense>
         )}
       </div>
 
-
-      <div ref={whyRef}>
+      <div
+        ref={whyRef}
+        className={`${styles["fade-in-up"]} ${whyInView ? styles.visible : ""}`}
+      >
         {whyInView && (
-          <Suspense fallback={<div className="text-white text-center">Loading why choose us...</div>}>
+          <Suspense fallback={<Loader />}>
             <WhyChooseUs />
           </Suspense>
         )}
       </div>
 
-
-      <div ref={statsRef}>
+      <div
+        ref={statsRef}
+        className={`${styles["fade-in-up"]} ${statsInView ? styles.visible : ""}`}
+      >
         {statsInView && (
-          <Suspense fallback={<div className="text-white text-center">Loading stats...</div>}>
+          <Suspense fallback={<Loader />}>
             <Stats />
           </Suspense>
         )}
       </div>
 
-
-      <div ref={servicesRef}>
+      <div
+        ref={servicesRef}
+        className={`${styles["fade-in-up"]} ${servicesInView ? styles.visible : ""}`}
+      >
         {servicesInView && (
-          <Suspense fallback={<div className="text-white text-center">Loading services...</div>}>
+          <Suspense fallback={<Loader />}>
             <Services />
           </Suspense>
         )}
       </div>
 
-
-      <div ref={workRef}>
+      <div
+        ref={workRef}
+        className={`${styles["fade-in-up"]} ${workInView ? styles.visible : ""}`}
+      >
         {workInView && (
-          <Suspense fallback={<div className="text-white text-center">Loading work...</div>}>
+          <Suspense fallback={<Loader />}>
             <Work />
           </Suspense>
         )}
       </div>
 
-
-      <div ref={portfolioRef}>
+      <div
+        ref={portfolioRef}
+        className={`${styles["fade-in-up"]} ${portfolioInView ? styles.visible : ""}`}
+      >
         {portfolioInView && (
-          <Suspense fallback={<div className="text-white text-center">Loading portfolio...</div>}>
+          <Suspense fallback={<Loader />}>
             <Portfolio />
           </Suspense>
         )}
       </div>
 
-
-      <div ref={contactRef}>
+      <div
+        ref={contactRef}
+        className={`${styles["fade-in-up"]} ${contactInView ? styles.visible : ""}`}
+      >
         {contactInView && (
-          <Suspense fallback={<div className="text-white text-center">Loading contact...</div>}>
+          <Suspense fallback={<Loader />}>
             <Contact />
           </Suspense>
         )}
       </div>
-
-
     </>
   );
 }
