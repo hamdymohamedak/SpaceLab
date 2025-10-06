@@ -6,13 +6,11 @@ import {
     PenTool,
     Settings,
 } from 'lucide-react';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation'; 
-
+import 'swiper/css/navigation';
 import starsBg from '../../assets/Services/Element.webp';
 import BlueBlur from '../../assets/Services/Container.webp';
 import SearchEngineCardBG from '../../assets/Services/Group 5.webp';
@@ -21,16 +19,53 @@ import SocialMedia from "../../assets/Services/SocialMedia.webp";
 import Ecommarce from "../../assets/Services/ECommerce.webp";
 import DesginBg from "../../assets/Services/Desgin.webp";
 import MangementBg from "../../assets/Services/Mangement.webp";
-
+import styles from "./Services.module.css";
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function Services() {
     const { t, i18n } = useTranslation();
+    const contentSectionRef = useRef(null); // For parent div in desktop
+    const mobileCardRefs = useRef([]); // For mobile cards in Swiper
 
     useEffect(() => {
         document.documentElement.setAttribute('dir', i18n.language === 'ar' ? 'rtl' : 'ltr');
         document.documentElement.setAttribute('lang', i18n.language);
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const index = mobileCardRefs.current.indexOf(entry.target);
+                    entry.target.classList.add(
+                        entry.target === contentSectionRef.current || index % 2 === 0
+                            ? styles.card
+                            : styles.cardAlt
+                    );
+                    entry.target.classList.remove(styles.noAnimation);
+                } else {
+                    entry.target.classList.remove(styles.card, styles.cardAlt);
+                    entry.target.classList.add(styles.noAnimation);
+                }
+            });
+        }, observerOptions);
+
+        if (contentSectionRef.current) observer.observe(contentSectionRef.current);
+        mobileCardRefs.current.forEach((card) => {
+            if (card) observer.observe(card);
+        });
+
+        return () => {
+            if (contentSectionRef.current) observer.unobserve(contentSectionRef.current);
+            mobileCardRefs.current.forEach((card) => {
+                if (card) observer.unobserve(card);
+            });
+        };
     }, [i18n.language]);
 
     const servicesData = [
@@ -164,7 +199,7 @@ export default function Services() {
             <div className="absolute top-32 right-20 w-24 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent -rotate-45 pointer-events-none" />
             <div className="absolute bottom-32 right-32 w-32 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent rotate-45 pointer-events-none" />
 
-            <div className={`relative max-w-6xl mx-auto ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}>
+            <div ref={contentSectionRef} className={`relative max-w-6xl mx-auto ${styles.noAnimation} ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}>
                 <div className="text-center mb-12">
                     <p className="text-gray-500 text-xs uppercase tracking-wider mb-3">
                         {t('sectionLabel')}
@@ -191,7 +226,7 @@ export default function Services() {
                             pagination={{ clickable: true }}
                             spaceBetween={16}
                             slidesPerView={1.2}
-                            dir={i18n.language === 'ar' ? 'rtl' : 'ltr'} 
+                            dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
                             key={i18n.language}
                             style={{
                                 width: '100vw',
@@ -201,7 +236,11 @@ export default function Services() {
                             }}
                         >
                             {servicesData.map((service, index) => (
-                                <SwiperSlide key={index}>
+                                <SwiperSlide
+                                    key={index}
+                                    ref={(el) => (mobileCardRefs.current[index] = el)}
+                                    className={styles.noAnimation}
+                                >
                                     <div className={i18n.language === 'ar' ? 'pr-4' : 'pl-4'}>
                                         <ServiceCard {...service} />
                                     </div>
