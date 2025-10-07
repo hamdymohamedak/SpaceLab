@@ -245,5 +245,41 @@
       "des": "UI/UX, web design/development, Branding",
       "category": "Branding"
     }
-  ]
+  ],
+
+  
+  "title": "Buraq Air",
+  "tags": {
+    "uiux": "UI/UX",
+    "webDesign": "Web Design Development"
+  },
+  "ProjectDetailsdescription": {
+    "main": "Buraq Air is one of Libya's leading airlines, committed to providing safe, reliable, and efficient air transport services that connect Libya with regional and international destinations.",
+    "client": "Buraq Air has partnered with top technology providers to deliver a seamless, user-friendly online booking platform that enhances customer experience and operational efficiency.",
+    "achievement": "We designed and developed a modernized digital platform that combines safety with ease of use for travelers seeking to book flights across Libya and beyond. The platform highlights Buraq Air's commitment to service excellence, featuring real-time flight updates, easy booking processes, and comprehensive travel information."
+  },
+  "infoSection": {
+    "clientLabel": "Client",
+    "clientValue": "Buraq Air",
+    "launchedInLabel": "Launched in",
+    "launchedInValue": "2025",
+    "categoryLabel": "Category",
+    "categoryValue": "UI/UX, Web Design Development",
+    "sectorLabel": "Sector",
+    "sectorValue": "Airlines",
+    "websiteLabel": "Website",
+    "websiteValue": "buraq.aero"
+  },
+  "ProjectDetailssections": {
+    "client": "Client",
+    "achievement": "Achievement",
+    "buraqPages": "Buraq Air Pages",
+    "similarProjects": "similar Projects"
+  },
+  "altTexts": {
+    "desktopScreen": "Buraq Air Desktop Screen",
+    "homepage": "Buraq Air Homepage",
+    "aboutPage": "Buraq Air About Page"
+  }
 }
+

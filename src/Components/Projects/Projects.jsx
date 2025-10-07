@@ -11,6 +11,7 @@ import LYpay from "../../assets/Projects/LYpay.webp";
 import Mobile from "../../assets/Projects/Mobile.webp";
 import MREIC from "../../assets/Projects/MREIC.webp";
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 export default function Projects() {
   const { t } = useTranslation();
@@ -127,9 +128,10 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredProjects.map((project) => (
-            <div
+            <Link
               style={{ cursor: "pointer" }}
               key={project.id}
+              to={"/ProjectsDetails"}
               className="group relative rounded-2xl overflow-hidden hover:border-yellow-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-400/10"
             >
               <div className="relative h-64 overflow-hidden">
@@ -149,7 +151,7 @@ export default function Projects() {
               </div>
 
               <div className="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/5 transition-all duration-300 pointer-events-none"></div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
