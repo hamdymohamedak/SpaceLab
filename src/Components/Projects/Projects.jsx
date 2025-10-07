@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ChevronDown } from 'lucide-react'; // ✅ Import icon
 import Afriqiyah from "../../assets/Projects/Afriqiyah.webp";
 import AlhakeemCo from "../../assets/Projects/AlhakeemCo.webp";
 import Birds from "../../assets/Projects/Birds.webp";
@@ -14,8 +15,9 @@ import { useTranslation } from 'react-i18next';
 export default function Projects() {
   const { t } = useTranslation();
 
-
   const [activeFilter, setActiveFilter] = useState(t('filters.0'));
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedDropdown, setSelectedDropdown] = useState("كل الفئات"); // ✅ new state for button title
 
   // تحديث الفلتر عند تغيير اللغة
   useEffect(() => {
@@ -44,6 +46,14 @@ export default function Projects() {
     t('filters.5')
   ];
 
+  const dropdownOptions = [
+    "كل الفئات",
+    "مالية",
+    "خيرية",
+    "حكومية",
+    "سياحة و سفر"
+  ];
+
   const filteredProjects = activeFilter === t('filters.0')
     ? projects
     : projects.filter(p => p.category.includes(activeFilter));
@@ -55,23 +65,56 @@ export default function Projects() {
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-6">{t('header')}</h1>
 
-
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 relative">
+            {/* Existing Filter Buttons */}
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === filter
-                    ? 'bg-yellow-400 text-black'
-                    : 'bg-slate-800/50 text-white hover:bg-slate-700/50 border border-slate-700'
+                  ? 'bg-yellow-400 text-black'
+                  : 'bg-slate-800/50 text-white hover:bg-slate-700/50 border border-slate-700'
                   }`}
               >
                 {filter}
               </button>
             ))}
+
+            {/* New Button with Dropdown (Styled like Active Filter Button) */}
+            <div className="relative">
+              <button
+                onClick={() => setShowDropdown(!showDropdown)}
+                className={`flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 
+                  ${showDropdown
+                    ? 'bg-yellow-400 text-black'
+                    : 'bg-yellow-400 text-black hover:bg-yellow-500'
+                  }`}
+              >
+                {selectedDropdown}
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`}
+                />
+              </button>
+
+              {showDropdown && (
+                <div className="absolute mt-2 w-40 bg-slate-800 border border-slate-700 rounded-lg shadow-lg z-10">
+                  {dropdownOptions.map((option, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        setSelectedDropdown(option); // ✅ set selected option as button title
+                        setShowDropdown(false);
+                      }}
+                      className="block w-full text-left px-4 py-2 text-white hover:bg-slate-700 transition-colors duration-200"
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
-
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredProjects.map((project) => (
