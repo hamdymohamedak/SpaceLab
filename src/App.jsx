@@ -4,6 +4,7 @@ import Hero from "./Components/Hero/Hero";
 import TurnOffLogs from "./TurnOffLogs";
 import { useTranslation } from "react-i18next";
 import Projects from "./Components/Projects/Projects";
+import ProjectDetails from "./Components/Projects/ProjectDetails/ProjectDetails";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
 
@@ -26,6 +27,7 @@ function App() {
           }
         />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projectsDetails" element={<ProjectDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<div className="text-white text-center p-8">404 - Page Not Found</div>} />
       </Routes>
