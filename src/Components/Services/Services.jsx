@@ -25,8 +25,8 @@ import { useEffect, useRef } from 'react';
 
 export default function Services() {
     const { t, i18n } = useTranslation();
-    const contentSectionRef = useRef(null); // For parent div in desktop
-    const mobileCardRefs = useRef([]); // For mobile cards in Swiper
+    const contentSectionRef = useRef(null);
+    const mobileCardRefs = useRef([]);
 
     useEffect(() => {
         document.documentElement.setAttribute('dir', i18n.language === 'ar' ? 'rtl' : 'ltr');
@@ -83,7 +83,7 @@ export default function Services() {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                opacity: 0.5,
+                opacity: 1,
             },
         },
         {
@@ -174,7 +174,7 @@ export default function Services() {
     ];
 
     return (
-        <div className={`relative min-h-screen bg-[#0A0A0F] py-16 px-4 overflow-visible ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`} dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
+        <div className={`relative min-h-fit bg-[#0A0A0F] py-16 px-4 overflow-visible ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`} dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
             <img
                 loading="lazy"
                 className="absolute left-[15%] top-0 pointer-events-none z-0"
@@ -220,34 +220,32 @@ export default function Services() {
                 </div>
 
                 <div className="block md:hidden">
-                    <div className={i18n.language === 'ar' ? 'pr-4 -mr-4' : 'pl-4 -ml-4'}>
-                        <Swiper
-                            modules={[Pagination]}
-                            pagination={{ clickable: true }}
-                            spaceBetween={16}
-                            slidesPerView={1.2}
-                            dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
-                            key={i18n.language}
-                            style={{
-                                width: '100vw',
-                                position: 'relative',
-                                right: i18n.language === 'ar' ? '16px' : '0',
-                                left: i18n.language === 'ar' ? '0' : '16px',
-                            }}
-                        >
-                            {servicesData.map((service, index) => (
-                                <SwiperSlide
-                                    key={index}
-                                    ref={(el) => (mobileCardRefs.current[index] = el)}
-                                    className={styles.noAnimation}
-                                >
-                                    <div className={i18n.language === 'ar' ? 'pr-4' : 'pl-4'}>
-                                        <ServiceCard {...service} />
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    </div>
+                    <Swiper
+                        modules={[Pagination]}
+                        pagination={{ clickable: true }}
+                        spaceBetween={16}
+                        slidesPerView={1.2}
+                        dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
+                        key={i18n.language}
+                        className={styles.swiperCenteredPagination}
+                        style={{
+                            width: '100%',
+                            position: 'relative',
+                            paddingBottom: '0', // تم إزالة المسافة السفلية
+                        }}
+                    >
+                        {servicesData.map((service, index) => (
+                            <SwiperSlide
+                                key={index}
+                                ref={(el) => (mobileCardRefs.current[index] = el)}
+                                className={styles.noAnimation}
+                            >
+                                <div className="px-4">
+                                    <ServiceCard {...service} />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
 
                 <div className="hidden md:grid grid-cols-2 gap-6">

@@ -277,4 +277,44 @@
     right: 2%;
     top: 15%;
   }
+}/* Services.module.css */
+.swiperCenteredPagination {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.swiperCenteredPagination .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 10px; /* Adjust vertical position if needed */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally relative to the Swiper container */
+  width: auto; /* Allow pagination to size naturally */
+  padding: 0;
+  z-index: 10;
+}
+
+.swiperCenteredPagination .swiper-pagination-bullet {
+  background: #ffffff; /* Adjust bullet color to match your design */
+  opacity: 0.5;
+  width: 8px;
+  height: 8px;
+  margin: 0 6px; /* Space between bullets */
+  border-radius: 50%;
+}
+
+.swiperCenteredPagination .swiper-pagination-bullet-active {
+  background: #ffffff;
+  opacity: 1;
+  transform: scale(1.2); /* Slightly larger active bullet for visibility */
+}
+
+/* Ensure parent container doesn't interfere */
+.block {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
