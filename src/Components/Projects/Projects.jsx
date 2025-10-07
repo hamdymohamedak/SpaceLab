@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react'; // ✅ Icon
+import { ChevronDown } from 'lucide-react';
 import Afriqiyah from "../../assets/Projects/Afriqiyah.webp";
 import AlhakeemCo from "../../assets/Projects/AlhakeemCo.webp";
 import Birds from "../../assets/Projects/Birds.webp";
@@ -15,72 +15,86 @@ import { useTranslation } from 'react-i18next';
 export default function Projects() {
   const { t } = useTranslation();
 
-  const [activeFilter, setActiveFilter] = useState(t('filters.0'));
+  const [activeFilter, setActiveFilter] = useState(t('filters.0')); // Filter for project categories
   const [showDropdown, setShowDropdown] = useState(false);
-  const [selectedDropdown, setSelectedDropdown] = useState(t("optionFilters.0"));
+  const [selectedDropdown, setSelectedDropdown] = useState(t("optionFilters.0")); // Dropdown button title
 
+  // Sync activeFilter and selectedDropdown with language changes
   useEffect(() => {
-    setActiveFilter(t('filters.0'));
+    setActiveFilter(t('filters.0')); // Reset filter to "All" or "الكل"
+    setSelectedDropdown(t("optionFilters.0")); // Reset dropdown to "All Sectors" or "كل الفئات"
   }, [t]);
 
   const projects = [
-    { id: 1, title: t('projects.0.title'), des: t('projects.0.des'), image: Mobile, category: 'Mobile App' },
-    { id: 2, title: t('projects.1.title'), des: t('projects.1.des'), image: BuraqAir, category: 'Web Development' },
-    { id: 3, title: t('projects.2.title'), des: t('projects.2.des'), image: AlhakeemCo, category: 'E-Commerce' },
-    { id: 4, title: t('projects.3.title'), des: t('projects.3.des'), image: MREIC, category: 'Web Development' },
-    { id: 5, title: t('projects.4.title'), des: t('projects.4.des'), image: Afriqiyah, category: 'Web Development' },
-    { id: 6, title: t('projects.5.title'), des: t('projects.5.des'), image: Libyana, category: 'Branding' },
-    { id: 7, title: t('projects.6.title'), des: t('projects.6.des'), image: lsGives, category: 'Branding' },
-    { id: 8, title: t('projects.7.title'), des: t('projects.7.des'), image: LYpay, category: 'Branding' },
-    { id: 9, title: t('projects.8.title'), des: t('projects.8.des'), image: informatics, category: 'Branding' },
-    { id: 10, title: t('projects.9.title'), des: t('projects.9.des'), image: Birds, category: 'Branding' }
+    { id: 1, title: t('projects.0.title'), des: t('projects.0.des'), image: Mobile, category: t("optionFilters.1") }, // Finance
+    { id: 2, title: t('projects.1.title'), des: t('projects.1.des'), image: BuraqAir, category: t("optionFilters.4") }, // Travel & Tourism
+    { id: 3, title: t('projects.2.title'), des: t('projects.2.des'), image: AlhakeemCo, category: t("optionFilters.1") }, // Finance
+    { id: 4, title: t('projects.3.title'), des: t('projects.3.des'), image: MREIC, category: t("optionFilters.3") }, // Government
+    { id: 5, title: t('projects.4.title'), des: t('projects.4.des'), image: Afriqiyah, category: t("optionFilters.4") }, // Travel & Tourism
+    { id: 6, title: t('projects.5.title'), des: t('projects.5.des'), image: Libyana, category: t("optionFilters.1") }, // Finance
+    { id: 7, title: t('projects.6.title'), des: t('projects.6.des'), image: lsGives, category: t("optionFilters.2") }, // Charity
+    { id: 8, title: t('projects.7.title'), des: t('projects.7.des'), image: LYpay, category: t("optionFilters.1") }, // Finance
+    { id: 9, title: t('projects.8.title'), des: t('projects.8.des'), image: informatics, category: t("optionFilters.3") }, // Government
+    { id: 10, title: t('projects.9.title'), des: t('projects.9.des'), image: Birds, category: t("optionFilters.2") }, // Charity
   ];
 
   const filters = [
-    t('filters.0'),
-    t('filters.1'),
-    t('filters.2'),
-    t('filters.3'),
-    t('filters.4'),
-    t('filters.5')
+    t('filters.0'), // All
+    t('filters.1'), // Mobile App
+    t('filters.2'), // Web Development
+    t('filters.3'), // E-Commerce
+    t('filters.4'), // Branding
+    t('filters.5'), // Other
   ];
 
-  // ✅ Corrected dropdown options
   const dropdownOptions = [
-    t("optionFilters.0"),
-    t("optionFilters.1"),
-    t("optionFilters.2"),
-    t("optionFilters.3"),
-    t("optionFilters.4")
+    t("optionFilters.0"), // All Sectors
+    t("optionFilters.1"), // Finance
+    t("optionFilters.2"), // Charity
+    t("optionFilters.3"), // Government
+    t("optionFilters.4"), // Travel & Tourism
   ];
 
-  const filteredProjects = activeFilter === t('filters.0')
+  // Map dropdown options to project categories for filtering
+  const categoryMap = {
+    [t("optionFilters.0")]: t('filters.0'), // All Sectors -> All
+    [t("optionFilters.1")]: t("optionFilters.1"), // Finance -> Finance
+    [t("optionFilters.2")]: t("optionFilters.2"), // Charity -> Charity
+    [t("optionFilters.3")]: t("optionFilters.3"), // Government -> Government
+    [t("optionFilters.4")]: t("optionFilters.4"), // Travel & Tourism -> Travel & Tourism
+  };
+
+  // Filter projects based on activeFilter or selectedDropdown
+  const filteredProjects = activeFilter === t('filters.0') || selectedDropdown === t("optionFilters.0")
     ? projects
-    : projects.filter(p => p.category.includes(activeFilter));
+    : projects.filter(p => p.category === selectedDropdown);
 
   return (
     <div className="min-h-screen p-8">
       <div className="relative max-w-6xl mx-auto">
-
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-6">{t('header')}</h1>
 
           <div className="flex flex-wrap gap-3 relative">
-            {/* Existing Filter Buttons */}
+            {/* Filter Buttons */}
             {filters.map((filter) => (
               <button
                 key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === filter
-                  ? 'bg-yellow-400 text-black'
-                  : 'bg-slate-800/50 text-white hover:bg-slate-700/50 border border-slate-700'
-                  }`}
+                onClick={() => {
+                  setActiveFilter(filter);
+                  setSelectedDropdown(t("optionFilters.0")); // Reset dropdown to "All Sectors"
+                }}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  activeFilter === filter
+                    ? 'bg-yellow-400 text-black'
+                    : 'bg-slate-800/50 text-white hover:bg-slate-700/50 border border-slate-700'
+                }`}
               >
                 {filter}
               </button>
             ))}
 
-            {/* New Dropdown Button */}
+            {/* Dropdown Button */}
             <div className="relative">
               <button
                 onClick={() => setShowDropdown(!showDropdown)}
@@ -102,7 +116,8 @@ export default function Projects() {
                     <button
                       key={idx}
                       onClick={() => {
-                        setSelectedDropdown(option);  // ✅ Sets title of the dropdown button
+                        setSelectedDropdown(option);
+                        setActiveFilter(categoryMap[option]); // Sync with filter
                         setShowDropdown(false);
                       }}
                       className="block w-full text-left px-4 py-2 text-white hover:bg-slate-700 transition-colors duration-200"
