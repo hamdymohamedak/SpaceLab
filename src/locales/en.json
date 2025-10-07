@@ -121,8 +121,6 @@
     },
     "buttonText": "Send"
   },
-
-  
   "brand": "SpaceLab",
   "Footerdescription": "We envision your ideas into innovative digital solutions. We give your brand a promising start to open beyond borders. We believe in delivering projects on time, passing into the future.",
   "socialMedia": {
@@ -179,9 +177,7 @@
       "Sudan"
     ]
   },
-
-  
-    "header": "PROJECTS",
+  "header": "PROJECTS",
   "filters": [
     "All",
     "UI UX",
@@ -191,9 +187,13 @@
     "Branding",
     "All Filter"
   ],
-
-
-
+  "optionFilters": [
+    "All Sectors",
+    "Finance",
+    "Charity",
+    "Government",
+    "Travel & Tourism"
+  ],
   "projects": [
     {
       "title": "Merdami",
@@ -246,6 +246,4 @@
       "category": "Branding"
     }
   ]
-
-
 }

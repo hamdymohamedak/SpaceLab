@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react'; // ✅ Import icon
+import { ChevronDown } from 'lucide-react'; // ✅ Icon
 import Afriqiyah from "../../assets/Projects/Afriqiyah.webp";
 import AlhakeemCo from "../../assets/Projects/AlhakeemCo.webp";
 import Birds from "../../assets/Projects/Birds.webp";
@@ -17,9 +17,8 @@ export default function Projects() {
 
   const [activeFilter, setActiveFilter] = useState(t('filters.0'));
   const [showDropdown, setShowDropdown] = useState(false);
-  const [selectedDropdown, setSelectedDropdown] = useState("كل الفئات"); // ✅ new state for button title
+  const [selectedDropdown, setSelectedDropdown] = useState(t("optionFilters.0"));
 
-  // تحديث الفلتر عند تغيير اللغة
   useEffect(() => {
     setActiveFilter(t('filters.0'));
   }, [t]);
@@ -46,12 +45,13 @@ export default function Projects() {
     t('filters.5')
   ];
 
+  // ✅ Corrected dropdown options
   const dropdownOptions = [
-    "كل الفئات",
-    "مالية",
-    "خيرية",
-    "حكومية",
-    "سياحة و سفر"
+    t("optionFilters.0"),
+    t("optionFilters.1"),
+    t("optionFilters.2"),
+    t("optionFilters.3"),
+    t("optionFilters.4")
   ];
 
   const filteredProjects = activeFilter === t('filters.0')
@@ -80,12 +80,12 @@ export default function Projects() {
               </button>
             ))}
 
-            {/* New Button with Dropdown (Styled like Active Filter Button) */}
+            {/* New Dropdown Button */}
             <div className="relative">
               <button
                 onClick={() => setShowDropdown(!showDropdown)}
-                className={`flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 
-                  ${showDropdown
+                className={`flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
+                  ${showDropdown || selectedDropdown !== t("optionFilters.0")
                     ? 'bg-yellow-400 text-black'
                     : 'bg-yellow-400 text-black hover:bg-yellow-500'
                   }`}
@@ -102,7 +102,7 @@ export default function Projects() {
                     <button
                       key={idx}
                       onClick={() => {
-                        setSelectedDropdown(option); // ✅ set selected option as button title
+                        setSelectedDropdown(option);  // ✅ Sets title of the dropdown button
                         setShowDropdown(false);
                       }}
                       className="block w-full text-left px-4 py-2 text-white hover:bg-slate-700 transition-colors duration-200"
