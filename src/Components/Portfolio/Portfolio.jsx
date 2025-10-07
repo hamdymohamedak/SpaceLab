@@ -18,8 +18,8 @@ import { Link } from "react-router-dom";
 export default function Portfolio() {
     const images = [MobileImage, Draw, Analysis, DesktopScreen];
     const { t, i18n } = useTranslation();
-    const desktopContentRef = useRef(null); // For parent div in desktop
-    const mobileContentRef = useRef(null); // For parent div in mobile
+    const desktopContentRef = useRef(null); 
+    const mobileContentRef = useRef(null); 
 
     useEffect(() => {
         document.documentElement.setAttribute('dir', i18n.language === 'ar' ? 'rtl' : 'ltr');
@@ -52,7 +52,12 @@ export default function Portfolio() {
     }, [i18n.language]);
 
     return (
-        <section className={`relative bg-black text-white py-16 px-4 overflow-hidden ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`} dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
+        <section
+            className={`relative bg-black text-white 
+            py-8 sm:py-16 px-4 overflow-hidden 
+            ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`}
+            dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
+        >
             <div ref={desktopContentRef} className={`relative max-w-6xl mx-auto ${styles.noAnimation}`}>
                 <img
                     loading="lazy"
@@ -65,8 +70,12 @@ export default function Portfolio() {
                     alt="Light"
                 />
 
-                <div ref={mobileContentRef} className={`${styles.noAnimation} lg:hidden space-y-10`}>
-                    <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6">
+                {/* MOBILE VIEW */}
+                <div
+                    ref={mobileContentRef}
+                    className={`${styles.noAnimation} lg:hidden space-y-10`}
+                >
+                    <div className="flex flex-col items-center justify-center min-h-[40vh] text-center space-y-6">
                         <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-200 border-b-2 border-yellow-400 pb-1">
                             {t("ContactsectionTitle")}
                         </h3>
@@ -113,6 +122,7 @@ export default function Portfolio() {
                     </Swiper>
                 </div>
 
+                {/* DESKTOP VIEW */}
                 <div className="hidden lg:grid grid-cols-2 gap-12 items-center">
                     <div className="grid grid-cols-2 gap-4">
                         {[MobileImage, Draw].map((img, i) => (
