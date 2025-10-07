@@ -177,10 +177,11 @@ export default function Services() {
         <div className={`relative min-h-fit bg-[#0A0A0F] py-16 px-4 overflow-visible ${i18n.language === 'ar' ? 'text-right' : 'text-left'}`} dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}>
             <img
                 loading="lazy"
-                className="absolute left-[15%] top-0 pointer-events-none z-0"
+                className="hidden md:block absolute left-[15%] top-0 pointer-events-none z-0"
                 src={starsBg}
                 alt="starsBg"
             />
+
             <img
                 loading="lazy"
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
@@ -231,7 +232,7 @@ export default function Services() {
                         style={{
                             width: '100%',
                             position: 'relative',
-                            paddingBottom: '0', // تم إزالة المسافة السفلية
+                            paddingBottom: '50px', // مسافة إضافية لتحت النقاط
                         }}
                     >
                         {servicesData.map((service, index) => (
@@ -246,6 +247,7 @@ export default function Services() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+
                 </div>
 
                 <div className="hidden md:grid grid-cols-2 gap-6">

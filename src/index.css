@@ -7,15 +7,18 @@ body {
 html {
     font-size: 16px;
 }
+
 body[dir="rtl"] {
-  direction: rtl;
+    direction: rtl;
 }
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-display: swap;
-  /* overflow-y: visible; */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-display: swap;
+    /* overflow-y: visible; */
 }
 
 @media (max-width: 320px) {
@@ -46,4 +49,16 @@ html, body {
     html {
         font-size: 15px;
     }
+}
+
+/* Normal Active */
+.swiper-pagination-bullet {
+    background: #fff !important;
+    opacity: 0.7;
+}
+
+/* Active Tab  */
+.swiper-pagination-bullet-active {
+    background: #0a0ac7 !important;
+    opacity: 1;
 }
